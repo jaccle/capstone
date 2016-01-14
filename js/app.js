@@ -1,7 +1,28 @@
 var app = angular.module("dnd", ['ngRoute']);
 
+app.config(function($routeProvider) {
+  $routeProvider
+    .when('/layout1', {
+      templateUrl: 'layouts/layout1.html',
+      controller: 'FirstController',
+      css: 'layouts/layout1.css'
+    })
+    .when('/layout2', {
+      templateUrl: 'layouts/layout2.html',
+      controller: 'SecondController',
+      css: 'layouts/layout2.css'
+    })
+    .when('/layout3', {
+      templateUrl: 'layouts/layout3.html',
+      controller: 'ThirdController',
+      css: 'layouts/layout3.css'
+    })
+    .otherwise({
+       redirectTo: '/layout1' //catch-all re-route
+    });
+});
+
 app.controller("FirstController", function($scope, DummyFormData) {
-    $scope.layout = "layout1";
     $scope.name = DummyFormData.name();
     $scope.phone = DummyFormData.phone;
     $scope.email = DummyFormData.email;
@@ -26,7 +47,6 @@ app.controller("FirstController", function($scope, DummyFormData) {
 });
 
 app.controller("SecondController", function($scope, DummyFormData) {
-    $scope.layout = "layout2";
     $scope.name = DummyFormData.name();
     $scope.phone = DummyFormData.phone;
     $scope.email = DummyFormData.email;
@@ -104,7 +124,6 @@ app.controller("SecondController", function($scope, DummyFormData) {
 });
 
 app.controller("ThirdController", function($scope, DummyFormData) {
-    $scope.layout = "layout3";
     $scope.name = DummyFormData.name();
     $scope.phone = DummyFormData.phone;
     $scope.email = DummyFormData.email;
