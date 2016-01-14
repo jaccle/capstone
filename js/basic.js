@@ -1,6 +1,4 @@
-var app = angular.module("dnd", ['ngRoute']);
-
-app.factory('DummyFormData', function () {
+angular.module("dnd").factory('DummyFormData', function () {
     var layout = "Layout1",
     name = "Full Name",
     phone = "555 555 555",

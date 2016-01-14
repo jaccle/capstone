@@ -1,1 +1,100 @@
-HIIIII
+<script type="text/ng-template" id="list.html">
+      <ul dnd-list="list">
+        <li ng-repeat="item in list" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{selected: models.selected === item}" ng-include="item.type + '.html'">
+        </li>
+      </ul>
+    </script>
+    <!-- This template is responsible for rendering a container element. It uses the above list template to render each container column -->
+    <script type="text/ng-template" id="container.html">
+      <div class="container-element box-blue">
+        <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
+        <div class="clearfix"></div>
+      </div>
+    </script>
+    <!-- Template for a normal list item -->
+    <script type="text/ng-template" id="item.html">
+      <div class="box item">{{item.id}}</div>
+    </script>
+    <!-- Template for a section -->
+    <script type="text/ng-template" id="section.html">
+      <h3 ng-model="that" class="box section">{{item.id}}</h3>
+    </script>
+    <!-- Template for title -->
+    <script type="text/ng-template" id="title.html">
+      <h4 ng-model="that" class="box title">{{item.id}}</h3>
+  </script>
+
+  <!-- Template for a bullet -->
+  <script type="text/ng-template" id="bullet.html">
+    <div ng-model="that" class="bullet">• {{item.id}}</div>
+  </script>
+  
+  <!-- Main area with dropzones and source code -->
+<div class="wrapper">
+  <div class="form" ng-show="isFormOpen">
+  	<h2>Generated Model</h2>
+    <pre>{{modelAsJson}}</pre>
+  </div>
+  <div class="demo">
+  <div ng-repeat="(zone, list) in models.dropzones" ng-if="$index < 3">
+      <div class="dropzone {{zone}}">
+        
+        <!-- The dropzone also uses the list template -->
+        <div ng-include="'list.html'"></div>
+      </div>
+    </div>
+    <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
+  </div>
+  </div>
+</div>
+  
+  <!-- Sidebar -->
+  <div class="sidebar options">
+  <div ng-if="models.selected" class="box box-grey box-padding">
+      <h3>Selected</h3>
+      <strong>Type: </strong> {{models.selected.name}}
+      <br>
+      <input type="text" ng-model="models.selected.id" class="form-control" style="margin-top: 5px" />
+    </div>
+    <div class="toggle">
+    	<button class="btn btn-info" ng-click="isFormOpen = !isFormOpen">Show/Hide Form</button>
+    </div>
+    <div class="toolbox box box-grey box-padding">
+      <h3>New Elements</h3>
+      <ul>
+        
+        <!-- The toolbox only allows to copy objects, not move it. After a new
+                 element was created, dnd-copied is invoked and we generate the next id -->
+        <li class="choices" ng-repeat="item in models.templates" dnd-draggable="item" dnd-effect-allowed="copy" dnd-copied="{{item.id}}">
+          <button type="button" class="btn btn-default">{{item.name}}</button>
+        </li>
+      </ul>
+    </div>
+
+    <div ng-repeat="(zone, list) in models.dropzones" ng-if="$index > 2" class="col-md-6">
+      <div class="dropzone {{zone}}">
+        
+        <!-- The dropzone also uses the list template -->
+        <h3>{{zone}}</h3>
+        <div ng-include="'list.html'"></div>
+      </div>
+    </div>
+    <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
+
+    
+
+
+    <div class="trashcan box box-grey box-padding">
+      
+      <!-- If you use [] as referenced list, the dropped elements will be lost -->
+      <h3>Trashcan</h3>
+      <ul dnd-list="[]">
+        <h1>X</h1>
+      </ul>
+    </div>
+  </div>
+  <div class="layouts sidebar">
+    <a href="#layout1"><button>Layout1</button></a>
+    <a href="#layout2"><button>Layout2</button></a>
+    <a href="#layout3"><button>Layout3</button></a>
+  </div>
