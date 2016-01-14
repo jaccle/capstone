@@ -3,19 +3,19 @@ var app = angular.module("dnd", ['ngRoute']);
 app.config(function($routeProvider) {
   $routeProvider
     .when('/layout1', {
-      templateUrl: 'layouts/layout1.html',
+      templateUrl: 'templates/layout1.html',
       controller: 'FirstController',
-      css: 'layouts/layout1.css'
+      css: 'templates/layout1.css'
     })
     .when('/layout2', {
-      templateUrl: 'layouts/layout2.html',
+      templateUrl: 'templates/layout2.html',
       controller: 'SecondController',
-      css: 'layouts/layout2.css'
+      css: 'templates/layout2.css'
     })
     .when('/layout3', {
-      templateUrl: 'layouts/layout3.html',
+      templateUrl: 'templates/layout3.html',
       controller: 'ThirdController',
-      css: 'layouts/layout3.css'
+      css: 'templates/layout3.css'
     })
     .otherwise({
        redirectTo: '/layout1' //catch-all re-route

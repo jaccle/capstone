@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="dnd" >
-
+<html lang="en" ng-app="dnd">
 <section>
-<head>
-  <meta charset="UTF-8">
-  <title>Sassy CV</title>
-  <link rel="icon" type="image/png" href="./cv.png">
-  <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap-theme.css">
-  <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap.css">
-  <link rel="stylesheet" href="./basic.css">
-  <link rel="stylesheet" href="./style.css">
-  <script src="./bower_components/angular/angular.js"></script>
-  <script src="./bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
-  <script src="./bower_components/angular-route/angular-route.js"></script>
-  <script src="./bower_components/angular-route-styles/route-styles.js"></script>
-  <script src="./bower_components/angular-route-styles/ui-route-styles.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/basic.js"></script>
-</head>
 
-<body>
-  <script type="text/ng-template" id="list.html">
-    <ul dnd-list="list">
-      <li ng-repeat="item in list" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{selected: models.selected === item}" ng-include="item.type + '.html'">
-      </li>
-    </ul>
-  </script>
-  <!-- This template is responsible for rendering a container element. It uses the above list template to render each container column -->
-  <script type="text/ng-template" id="container.html">
-    <div class="container-element box-blue">
-      <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
-      <div class="clearfix"></div>
-    </div>
-  </script>
-  <!-- Template for a normal list item -->
-  <script type="text/ng-template" id="item.html">
-    <div class="box item">{{item.id}}</div>
-  </script>
-  <!-- Template for a section -->
-  <script type="text/ng-template" id="section.html">
-    <h3 ng-model="that" class="box section">{{item.id}}</h3>
-  </script>
-  <!-- Template for title -->
-  <script type="text/ng-template" id="title.html">
-    <h4 ng-model="that" class="box title">{{item.id}}</h3>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sassy CV</title>
+    <link rel="icon" type="image/png" href="./cv.png">
+    <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap.css">
+    <link rel="stylesheet" href="./basic.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
+    <script src="./bower_components/angular-route-styles/route-styles.js"></script>
+    <script src="./bower_components/angular-route-styles/ui-route-styles.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/basic.js"></script>
+  </head>
+
+  <body>
+    <script type="text/ng-template" id="list.html">
+      <ul dnd-list="list">
+        <li ng-repeat="item in list" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{selected: models.selected === item}" ng-include="item.type + '.html'">
+        </li>
+      </ul>
+    </script>
+    <!-- This template is responsible for rendering a container element. It uses the above list template to render each container column -->
+    <script type="text/ng-template" id="container.html">
+      <div class="container-element box-blue">
+        <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
+        <div class="clearfix"></div>
+      </div>
+    </script>
+    <!-- Template for a normal list item -->
+    <script type="text/ng-template" id="item.html">
+      <div class="box item">{{item.id}}</div>
+    </script>
+    <!-- Template for a section -->
+    <script type="text/ng-template" id="section.html">
+      <h3 ng-model="that" class="box section">{{item.id}}</h3>
+    </script>
+    <!-- Template for title -->
+    <script type="text/ng-template" id="title.html">
+      <h4 ng-model="that" class="box title">{{item.id}}</h3>
   </script>
 
   <!-- Template for a bullet -->
@@ -58,6 +58,7 @@
     <pre>{{modelAsJson}}</pre>
   </div>
   <div class="demo">
+  <div ng-view></div>
   <div ng-repeat="(zone, list) in models.dropzones" ng-if="$index < 3">
       <div class="dropzone {{zone}}">
         
@@ -66,7 +67,6 @@
       </div>
     </div>
     <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
-  </div>
   </div>
 </div>
   
@@ -116,7 +116,7 @@
     </div>
   </div>
   <div class="layouts sidebar">
-  	<a href="#layout2"></a>
+  	<a href="#layout2"><button>Layout2</button></a>
   </div>
 </body>
 </section>
