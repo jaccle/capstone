@@ -1,0 +1,9 @@
+.heading {
+    width: 100%
+}
+
+.main,
+.side {
+    display:none;
+}
+

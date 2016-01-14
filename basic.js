@@ -1,10 +1,18 @@
-angular.module("dnd").controller("NestedListsDemoController", function($scope) {
+var app = angular.module("dnd");
+
+app.controller("BaseController", function($scope, DummyFormData) {
+    $scope.name = DummyFormData.name;
+    $scope.phone = DummyFormData.phone;
+    $scope.email = DummyFormData.email;
 
     $scope.models = {
         selected: null,
         templates: [
             {type: "item", "name": "Item", id: "Item"},
-            {type: "container", "name": "Section", columns: [[], []]},
+            {type: "container", "name": "2 Columns", columns: [[], []]},
+            {type: "container", "name": "3 Columns", columns: [[], [], [] ]},
+            {type: "container", "name": "4 Columns", columns: [[], [], [], []]},
+            {type: "section", "name": "Section", id: "Section Title"},
             {type: "title", "name": "Title", id: "Title"},
             {type: "bullet",  "name": "Bullet", id: "point"}
         ],
@@ -12,7 +20,8 @@ angular.module("dnd").controller("NestedListsDemoController", function($scope) {
             "heading": [
                 {
                     "type": "title",
-                    "id": $scope.name
+                    "id": $scope.name,
+                    "model": 'name'
                 }
             ],
             "main": [

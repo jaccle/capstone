@@ -1,4 +1,4 @@
-        /***************************** Required styles *****************************/
+/***************************** Required styles *****************************/
         /**
  * For the correct positioning of the placeholder element, the dnd-list and
  * it's children must have position: relative
@@ -62,32 +62,15 @@
             display: block;
             position: relative;
         }
-        /***************************** Element Selection *****************************/
-        
-        .dropzone .selected .item {
-            color: #3c763d;
-            background-color: #dff0d8;
-        }
-        
-        .dropzone .selected .box {
-            border-color: #d6e9c6;
-        }
-        
-        .dropzone .selected .box > h3 {
-            color: #3c763d;
-            background-color: #dff0d8;
-            background-image: linear-gradient(to bottom, #dff0d8 0, #d0e9c6 100%);
-            border-color: #d6e9c6;
-        }
         /***************************** Element type specific styles *****************************/
         
         .dropzone {
             background-color: #eee;
             .item {
-                padding: 10px 15px;
+                padding: 3px;
             }
             .container-element {
-                margin: 10px;
+                margin: 6px;
             }
             .container-element .column {
                 float: left;
@@ -100,36 +83,81 @@
                 padding: 1px 5px;
             }
             .bullet {
-                padding: 3px 15px;
+                padding: 1px 15px;
             }
         }
-        /***************************** Sidebar *****************************/
+        /***************************** Element Selection *****************************/
+        
+        .dropzone .selected .box {
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+        
+        .dropzone .box:hover {
+            background-color: #FFF8DC;
+        }
+        
+        .dropzone .selected .box > h3 {
+            color: #3c763d;
+            background-color: #dff0d8;
+            background-image: linear-gradient(to bottom, #dff0d8 0, #d0e9c6 100%);
+            border-color: #d6e9c6;
+        }
+        /***************************** Resume *****************************/
         
         .demo {
             border: 2px solid #ddd;
-            position: absolute;
-            margin: 50px 17% 0 17%;
-            padding: 1in;
+            padding: .8in;
             width: 8.5in;
             height: 11in;
         }
+        
+        .wrapper {
+            position: absolute;
+            margin: 50px 17% 0 17%;
+            width: 8.5in;
+        }
+        .form {
+            margin: 30px;
+        }
         /***************************** Sidebar *****************************/
+
+        .btn-info {
+            margin: 10px auto -10px;
+        }
+
+        .choices {
+            margin: 0;
+        }
         
         $sideborder: 2px solid #555;
         $corner: 8px;
         .sidebar {
             background-color: #eee;
-            position: fixed;
-            float: left;
-            margin-top: 10%;
+            position: absolute;
+            margin-top: 50px;
             text-align: center;
             width: 15%;
+        }
+        
+        .options {
+            float: left;
             border-right: $sideborder;
             border-top: $sideborder;
             border-bottom: $sideborder;
             border-bottom-right-radius: $corner;
             border-top-right-radius: $corner;
         }
+        
+        .layouts {
+            right:0;
+            border-left: $sideborder;
+            border-top: $sideborder;
+            border-bottom: $sideborder;
+            border-bottom-left-radius: $corner;
+            border-top-left-radius: $corner;
+        }
+        
         /***************************** Toolbox *****************************/
         
         .toolbox ul {
