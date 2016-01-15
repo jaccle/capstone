@@ -1,22 +1,12 @@
-angular.module("dnd")
+angular.module("capstone")
 
-.controller("FirstController", ['$scope', function($scope, dndLists) {
+.controller("FirstController", ['$scope', 'DummyFormData', function($scope, DummyFormData) {
 
     $scope.models = {
         selected: null,
-        templates: [
-            {type: "item", "name": "Item", id: "Item"},
-            {type: "container", "name": "2 Columns", columns: [[], []]},
-            {type: "container", "name": "3 Columns", columns: [[], [], [] ]},
-            {type: "container", "name": "4 Columns", columns: [[], [], [], []]},
-            {type: "section", "name": "Section", id: "Section Title"},
-            {type: "title", "name": "Title", id: "Title"},
-            {type: "bullet",  "name": "Bullet", id: "point"}
-        ],
+        templates: DummyFormData.templates(),
         dropzones: {
             "heading": [],
-            "main": [],
-            "side": [],
             "Waitlist": []
         }
     };
@@ -32,48 +22,32 @@ angular.module("dnd")
     $scope.phone = DummyFormData.phone;
     $scope.email = DummyFormData.email;
 
-    $scope.models = {
+    $scope.models = { //=json.parse
         selected: null,
-        templates: [
-            {type: "item", "name": "Item", id: "Item"},
-            {type: "container", "name": "2 Columns", columns: [[], []]},
-            {type: "container", "name": "3 Columns", columns: [[], [], [] ]},
-            {type: "container", "name": "4 Columns", columns: [[], [], [], []]},
-            {type: "section", "name": "Section", id: "Section Title"},
-            {type: "title", "name": "Title", id: "Title"},
-            {type: "bullet",  "name": "Bullet", id: "point"}
-        ],
+        templates: DummyFormData.templates(),
         dropzones: {
-            "heading": [
-                {
-                    "type": "section",
-                    'name': "Section",
-                    "id": $scope.name,
-                    "model": 'name'
-                }
-            ],
-            "main": [
-                {
-                    "type": "title",
-                    "id": "4"
-                },
-                {
-                    "type": "section",
-                    "id": "5"
-                },
-                {
-                    "type": "item",
-                    "id": "6"
-                }
-            ],
-            "side": [
-                {
-                    "type": "title",
-                    'name': "Title",
-                    "id": $scope.name,
-                    "model": 'name'
-                }
-            ],
+            "heading": [{
+                "type": "section",
+                'name': "Section",
+                "id": $scope.name,
+                "model": 'name'
+            }],
+            "main": [{
+                "type": "title",
+                "id": "4"
+            }, {
+                "type": "section",
+                "id": "5"
+            }, {
+                "type": "item",
+                "id": "6"
+            }],
+            "side": [{
+                "type": "title",
+                'name': "Title",
+                "id": $scope.name,
+                "model": 'name'
+            }],
             "Waitlist": []
         }
     };
@@ -88,70 +62,89 @@ angular.module("dnd")
     $scope.name = DummyFormData.name();
     $scope.phone = DummyFormData.phone;
     $scope.email = DummyFormData.email;
+    $scope.street = DummyFormData.address.street;
+    $scope.city = DummyFormData.address.city;
+    $scope.state = DummyFormData.address.state;
+    $scope.zip = DummyFormData.address.zip;
+    $scope.experience = DummyFormData.experience.name;
+    $scope.exTitle = DummyFormData.experience.title;
+    $scope.exWhen = DummyFormData.experience.when;
+
+
+
+
+    function capitalize(s) {
+        return s[0].toUpperCase() + s.substr(1);
+    }
+
+    function item(type, model) {
+        return {
+            "type": type,
+            'name': capitalize(type),
+            'id': $scope.model,
+            'model': model.toString()
+        };
+    }
+
+    function variation(type, name, model) {
+        return {
+            'type': type,
+            'name': capitalize(name),
+            'id': $scope.model,
+            'model': model
+        };
+    }
 
     $scope.models = {
         selected: null,
-        templates: [
-            {type: "item", "name": "Item", id: "Item"},
-            {type: "container", "name": "2 Columns", columns: [[], []]},
-            {type: "container", "name": "3 Columns", columns: [[], [], [] ]},
-            {type: "container", "name": "4 Columns", columns: [[], [], [], []]},
-            {type: "section", "name": "Section", id: "Section Title"},
-            {type: "title", "name": "Title", id: "Title"},
-            {type: "bullet",  "name": "Bullet", id: "point"}
-        ],
+        templates: DummyFormData.templates(),
         dropzones: {
-            "heading": [
-                {
-                    "type": "title",
-                    'name': "Title",
-                    "id": $scope.name,
-                    "model": 'name'
-                }
-            ],
-            "main": [
-                {
-                    "type": "container",
-                    "name": {"type": "title", "id": $scope.experience},
-                    "columns": [
-                        [
-                            {
-                                "type": "bullet",
-                                "id": "1"
-                            },
-                            {
-                                "type": "bullet",
-                                "id": "2"
-                            }
-                        ],
-                        [
-                            {
-                                "type": "bullet",
-                                "id": "3"
-                            }
-                        ]
-                    ]
-                },
-                {
-                    "type": "item",
-                    "id": "4"
-                },
-                {
-                    "type": "item",
-                    "id": "5"
-                },
-                {
-                    "type": "item",
-                    "id": "6"
-                }
-            ],
-            "side": [
-                {
-                    "type": "item",
-                    "id": 17
-                }
-            ],
-            "Waitlist": []
+            "heading": [{
+                "type": "h1",
+                "name": "Title1",
+                "id": $scope.name,
+                'model': 'name'
+            }],
+            "main": [{
+                "type": "h3",
+                "name": "Title3",
+                "id": $scope.experience,
+                'model': 'experience'
+            }, {
+                "type": "h6",
+                "name": "Title6",
+                "id": $scope.exWhen,
+                'model': 'exWhen'
+            }, {
+                "type": "bullet",
+                "name": "Bullet",
+                "id": "responsibility",
+                'model': ''
+            }, {
+                "type": "bullet",
+                "name": "Bullet",
+                "id": "responsibility",
+                'model': ''
+            }, {
+                "type": "bullet",
+                "name": "Bullet",
+                "id": "responsibility",
+                'model': ''
+            }],
+            "side": [{
+                "type": "item",
+                "id": 17,
+                'model': ''
+            }],
+            "Waitlist": [{
+                "type": "item",
+                "id": "6",
+                'model': ''
+            }, {
+                "type": "item",
+                "id": "5",
+                'model': ''
+            }]
         }
     };
 

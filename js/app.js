@@ -1,19 +1,19 @@
-var app = angular.module("dnd", ['ngRoute']);
+var app = angular.module("capstone", ['ngRoute', 'dndLists', 'routeStyles']);
 
 app.config(function($routeProvider) {
   $routeProvider
     .when('/layout1', {
-      templateUrl: 'templates/layout1.html',
+      templateUrl: 'index.html',
       controller: 'FirstController',
       css: 'templates/layout1.css'
     })
     .when('/layout2', {
-      templateUrl: 'templates/layout2.html',
+      templateUrl: 'index.html',
       controller: 'SecondController',
       css: 'templates/layout2.css'
     })
     .when('/layout3', {
-      templateUrl: 'templates/layout3.html',
+      templateUrl: 'index.html',
       controller: 'ThirdController',
       css: 'templates/layout3.css'
     })

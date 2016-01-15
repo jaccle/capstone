@@ -7,7 +7,7 @@
  *
  * License: MIT
  */
-angular.module('dnd', [])
+angular.module('dndLists', [])
 
   /**
    * Use the dnd-draggable attribute to make your element draggable

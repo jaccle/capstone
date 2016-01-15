@@ -1,5 +1,17 @@
-angular.module("dnd").factory('DummyFormData', function () {
-    var layout = "Layout1",
+angular.module("capstone").factory('DummyFormData', function () {
+    var templates = [
+            {'type': "item", "name": "Item", 'id': "Item"},
+            {'type': "container", "name": "2 Columns", 'columns': [[], []]},
+            {'type': "container", "name": "3 Columns", 'columns': [[], [], [] ]},
+            {'type': "container", "name": "4 Columns", 'columns': [[], [], [], []]},
+            {'type': "h1", "name": "Title1", 'id': "Title"},
+            {'type': "h2", "name": "Title2", 'id': "Title"},
+            {'type': "h3", "name": "Title3", 'id': "Title"},
+            {'type': "h4", "name": "Title4", 'id': "Title"},
+            {'type': "h5", "name": "Title5", 'id': "Title"},
+            {'type': "h6", "name": "Title6", 'id': "Title"},
+            {'type': "bullet",  "name": "Bullet", 'id': "point"}
+        ],
     name = "Full Name",
     phone = "555 555 555",
     email = "example@example.com",
@@ -9,12 +21,12 @@ angular.module("dnd").factory('DummyFormData', function () {
         state: "CA",
         zip: "94105"
     },
-    experience = {
-        name: 'Name',
-        title: 'Title',
-        when: 'When',
-        bullets: ['I had this responsibility','and this responsibility']
-    },
+    experience = [{
+            name: 'Name',
+            title: 'Title',
+            when: 'When',
+            bullets: ['I had this responsibility','and this responsibility']
+        }],
     school = {
         name: 'School',
         when: 'Graduation date',
@@ -23,8 +35,8 @@ angular.module("dnd").factory('DummyFormData', function () {
         gpa: 'GPA'
     };
     return {
-        layout: function () {
-            return layout;
+        templates: function () {
+            return templates;
         },
         name: function () {
             return name;
