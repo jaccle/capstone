@@ -12,6 +12,12 @@ p {
   letter-spacing: .1rem;
   text-transform: uppercase; }
 
+.section {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-transform: uppercase; }
+
 .progress {
   background-color: #aaa;
   display: inline-block;
@@ -61,7 +67,8 @@ h6 {
   margin: 0 auto; }
 
 .experience,
-.school {
+.school,
+.other {
   margin: 0 0 0 10px; }
 
 /*# sourceMappingURL=layout2.css.map */

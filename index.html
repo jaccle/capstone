@@ -56,7 +56,7 @@
             </div>
             <div class="seven columns"><button ng-click="addContact()">+ Contact/Media</button></div>
           </div>
-          <div class="row" ng-repeat="m in contacts">
+          <div class="row" ng-repeat="m in contacts"><button ng-click="remove(contacts, $index)">X</button>
             <div class="three columns">
               <input type="checkbox" ng-model="m['show'+$index]" ng-init="m['show'+$index]=true">
               <select ng-model="m.type" class="">
@@ -82,12 +82,12 @@
           <label>Strength</label>
           <button ng-click="addStrength()">+</button>
           <h6 ng-repeat="strength in strengths"><input type="text" ng-model="strength.name" maxlength="11"><input type="number" name="input" ng-model="strength.amount"
-           min="0" max="100">/100</h6>
+           min="0" max="100">/100 <button ng-click="remove(strengths, $index)">X</button></h6>
         </div>
         <div class="row">
           <label for="languages">Languages</label>
           <button ng-click="addLang()">+</button>
-          <div class="row" ng-repeat="l in languages">
+          <div class="row" ng-repeat="l in languages"><button ng-click="remove(languages, $index)">X</button>
             <div class="four columns">
               <input class="u-full-width" type="text" ng-model="l.language">
             </div>
@@ -103,13 +103,13 @@
         <div class="row">
           <label>Other (side column)</label>
           <button ng-click="addSide()">Add More</button>
-          <div class="row other" ng-repeat="x in otherSide" ng-init="index = $index">
+          <div class="row other" ng-repeat="x in otherSide" ng-init="index = $index"><button ng-click="remove(otherSide, $index)">X</button>
             <input class="u-full-width" type="text" ng-model="x.name" placeholder="Resume Section Title">
             <input class="u-full-width" type="text" ng-model="x.title" placeholder="Subtitle">
             <input class="u-full-width" type="text" ng-model="x.text" placeholder="Text">
             <ul>
               <li ng-repeat="r in x.bullets track by $index">
-                <input class="u-most-width" type="text" ng-model="x.bullets[$index]"><button ng-click="remove(r, $index)" placeholder="Bullet point">-</button></li>
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]"><button ng-click="remove(x.bullets, $index)">X</button></li>
                 <button ng-click="addSideBull(index)">Add Bullet</button>
             </ul>
           </div>
@@ -117,13 +117,13 @@
         <div class="row">
           <label>Experience</label>
           <button ng-click="addExp()">Add Experience</button>
-          <div class="row xp" ng-repeat="x in experience track by $index" ng-init="index = $index">
+          <div class="row xp" ng-repeat="x in experience track by $index" ng-init="index = $index"><button ng-click="remove(experience, $index)">X</button>
             <input class="u-full-width" type="text" ng-model="x.name">
             <input class="u-full-width" type="text" ng-model="x.title">
             <input class="u-full-width" type="text" ng-model="x.when">
             <ul>
               <li ng-repeat="r in x.bullets track by $index">
-                <input class="u-most-width" type="text" ng-model="x.bullets[$index]">
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]"><button ng-click="remove(x.bullets, $index)">X</button>
               </li>
             <button ng-click="addBullet(index)">Add Responsibility</button>
             </ul>
@@ -132,7 +132,7 @@
         <div class="row">
           <label>Education</label>
           <button ng-click="addSchool()">Add School</button>
-          <div class="row education" ng-repeat="x in school track by $index" ng-init="index = $index">
+          <div class="row education" ng-repeat="x in school track by $index" ng-init="index = $index"><button ng-click="remove(school, $index)">X</button>
             <input class="u-full-width" type="text" ng-model="x.name">
             <input class="u-full-width" type="text" ng-model="x.major">
             <input class="u-full-width" type="text" ng-model="x.when">
@@ -144,13 +144,13 @@
             <div class="row">
           <label>Other (main area)</label>
           <button ng-click="addMain()">Add More</button>
-          <div class="row other" ng-repeat="x in otherMain" ng-init="index = $index">
+          <div class="row other" ng-repeat="x in otherMain" ng-init="index = $index"><button ng-click="remove(otherMain, $index)" placeholder="Bullet point">X</button>
             <input class="u-full-width" type="text" ng-model="x.name" placeholder="Resume Section Title">
             <input class="u-full-width" type="text" ng-model="x.title" placeholder="Subtitle">
             <input class="u-full-width" type="text" ng-model="x.text" placeholder="Text">
             <ul>
               <li ng-repeat="r in x.bullets track by $index">
-                <input class="u-most-width" type="text" ng-model="x.bullets[$index]" placeholder="Bullet point">
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]" placeholder="Bullet point"><button ng-click="remove(x.bullets, $index)">X</button>
               </li>
             <button ng-click="addMainBull(index)">Add Bullet</button>
             </ul>

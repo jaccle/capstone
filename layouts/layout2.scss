@@ -19,6 +19,10 @@ p {
     @include uppercase;
 }
 
+.section {
+	@include uppercase(20px)
+}
+
 .progress {
     background-color: #aaa;
     display: inline-block;
@@ -75,6 +79,7 @@ h6 {
 }
 
 .experience,
-.school {
+.school,
+.other {
     margin: 0 0 0 10px;
 }

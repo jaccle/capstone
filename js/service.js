@@ -13,8 +13,6 @@ angular.module("capstone").factory('DummyFormData', function () {
             {'type': "bullet",  "name": "Bullet", 'id': "point"}
         ],
     name = "Full Name",
-    phone = "555555555",
-    email = "example@example.com",
     address = {
         street: '11 Sweet St.',
         city: 'San Francisco',
