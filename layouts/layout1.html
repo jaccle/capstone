@@ -1,0 +1,107 @@
+<div ng-init="show = false" class="demo">
+<!-- Main area with dropzones and source code -->
+  
+<script type="text/ng-template" id="list.html">
+  <ul dnd-list="list">
+    <li ng-repeat="item in list" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{selected: models.selected === item}" class="{{item.id}}" ng-include="item.type + '.html'">
+    </li>
+  </ul>
+</script>
+<!-- This template is responsible for rendering a container element. It uses the above list template to render each container column -->
+<script type="text/ng-template" id="container.html">
+  <div class="container-element box-blue">
+    <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
+    <div class="clearfix"></div>
+  </div>
+</script>
+<!-- Template for a normal list item -->
+<script type="text/ng-template" id="item.html">
+  <div class="box item {{item.model}}">{{item.id}}</div>
+</script>
+<!-- Template for a heading -->
+<script type="text/ng-template" id="h1.html">
+  <h1 class="box title {{item.model}}">{{item.id}}</h1>
+</script>
+<!-- Template for a heading -->
+<script type="text/ng-template" id="h2.html">
+  <h2 class="box title {{item.model}}">{{item.id}}</h2>
+</script>
+<!-- Template for a title -->
+<script type="text/ng-template" id="h3.html">
+  <h3 class="box title {{item.model}}">{{item.id}}</h3>
+</script>
+<!-- Template for a title -->
+<script type="text/ng-template" id="h4.html">
+  <h3 class="box title {{item.model}}">{{item.id}}</h3>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="h5.html">
+  <h1 class="box title {{item.model}}">{{item.id}}</h1>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="h6.html">
+  <h4 class="box title {{item.model}}">{{item.id}}</h4>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="title.html">
+  <h5 class="box title {{item.model}}">{{item.id}}</h5>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="title.html">
+  <h6 class="box title {{item.model}}">{{item.id}}</h6>
+</script>
+<!-- Template for a bullet -->
+<script type="text/ng-template" id="bullet.html">
+  <div class="bullet {{item.model}}">• {{item.id}}</div>
+</script>
+<div ng-repeat="(zone, list) in models.dropzones" ng-if="!$last">
+  <div class="dropzone {{zone}}">
+    <!-- The dropzone also uses the list template -->
+    <div ng-include="'list.html'"></div>
+  </div>
+</div>
+<div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
+</div>
+</div>
+</div>
+<div>
+
+
+</div>
+  <!-- Sidebar -->
+  <div class="sidebar options">
+    <div class="scroll">
+      <div ng-if="models.selected" class="box box-grey box-padding">
+        <h5>Selected</h5>
+        <strong>Type: </strong> {{models.selected.name}}
+        <br>
+        <input type="text" ng-model="models.selected.id" autofocus="true" class="u-full-width" style="margin-top: 5px" />
+      </div>
+      <div class="toolbox box box-grey box-padding">
+        <h5>New Elements</h5>
+        <ul>
+          <!-- The toolbox only allows to copy objects, not move it. After a new
+                 element was created, dnd-copied is invoked and we generate the next id -->
+          <li class="choices" ng-repeat="item in models.templates" dnd-draggable="item" dnd-effect-allowed="copy" dnd-copied="{{item.id}}">
+            <button type="button" class="button">{{item.name}}</button>
+          </li>
+        </ul>
+      </div>
+      <div ng-repeat="(zone, list) in models.dropzones" ng-if="$last" class="col-md-6">
+        <div class="dropzone {{zone}}">
+          <!-- The dropzone also uses the list template -->
+          <h5>{{zone}}</h5>
+          <div class="waiting"></div>
+          <div ng-include="'list.html'" class="waitlist"></div>
+        </div>
+      </div>
+      <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
+      <div class="trashcan box box-grey box-padding">
+        <!-- If you use [] as referenced list, the dropped elements will be lost -->
+        <h5>Trashcan</h5>
+        <ul dnd-list="[]">
+          <h1>X</h1>
+        </ul>
+      </div>
+    </div>
+  </div>

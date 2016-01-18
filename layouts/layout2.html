@@ -1,0 +1,74 @@
+<div class="demo">
+  <div class="row">
+    <h1 class="name">{{name}}</h1>
+  </div>
+  <div class="row">
+    <div class="one-third column">
+      <div class="objective">
+        <h5>Objective</h5>
+        <p>{{objective}}</p>
+      </div>
+      <div class="strengths">
+      	<h5>Strengths</h5>
+      	<table>
+      		<tbody>
+      			<tr ng-repeat="s in strengths"><td>{{s.name + ' '}} </td><td><span class="progress" style="padding-right: {{s.amount/2}}%"></span></td></tr>
+      		</tbody>
+      	</table>
+      </div>
+      <div class="contact">
+        <h5>Contact</h5>
+        <div class="row">
+          <div ng-show="icon" class="one column">
+            <p><img class="icon" src="./layouts/icons/address.png" alt=""></p>
+          </div>
+          <div ng-show="icon" class="one column"></div>
+          <div class="ten columns">
+            <p ng-show="word">Address:</p>
+            <p>{{address.street}}</p>
+            <p>{{address.city}}, {{address.state}} {{address.zip}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div ng-show="icon" class="one column">
+            <p ng-show="show1"><img class="icon" src="./layouts/icons/{{icon1}}.png" alt=""></p>
+            <p ng-show="show2"><img class="icon" src="./layouts/icons/{{icon2}}.png" alt=""></p>
+            <p ng-show="show3"><img class="icon" src="./layouts/icons/{{icon3}}.png" alt=""></p>
+            <p ng-show="show4"><img class="icon" src="./layouts/icons/{{icon4}}.png" alt=""></p>
+            <p ng-show="show5"><img class="icon" src="./layouts/icons/{{icon5}}.png" alt=""></p>
+            <p ng-show="show6"><img class="icon" src="./layouts/icons/{{icon6}}.png" alt=""></p>
+          </div>
+          <div class="one column"></div>
+          <div class="ten columns">
+            <p ng-show="show1"><span>{{icon1}}: </span>{{option1}}</p>
+            <p ng-show="show2"><span ng-show="word">{{icon2}}: </span>{{option2}}</p>
+            <p ng-show="show3"><span ng-show="word">{{icon3}}: </span>{{option3}}</p>
+            <p ng-show="show4"><span ng-show="word">{{icon4}}: </span>{{option4}}</p>
+            <p ng-show="show5"><span ng-show="word">{{icon5}}: </span>{{option5}}</p>
+            <p ng-show="show6"><span ng-show="word">{{icon6}}: </span>{{option6}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="two-thirds column">
+      <div class="row">
+        <h4>Experience</h4>
+        <div class="experience" ng-repeat="e in experience track by $index">
+          <h5 class="company">{{e.name}}</h5>
+          <h6 class="title">{{e.title}} | {{e.when}}</h6>
+          <ul>
+            <li ng-repeat="r in e.bullets track by $index">{{r}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <h4>Education</h4>
+        <div class="row school" ng-repeat="e in school track by $index">
+          <h5 class="school">{{e.name}}</h5>
+          <h6>{{e.degree}} in {{e.major}}</h6>
+          <h6>Graduated: {{e.when}} | GPA: {{e.gpa}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

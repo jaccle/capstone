@@ -4,150 +4,173 @@
 <head>
   <meta charset="UTF-8">
   <title>Sassy CV</title>
-  <link rel="icon" type="image/png" href="./cv.png">
-  <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap-theme.css">
-  <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap.css">
+  <link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css">
+  <link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css">
   <link rel="stylesheet" href="./basic.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./layouts/form.css">
   <script src="./bower_components/angular/angular.js"></script>
   <script src="./bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
   <script src="./bower_components/angular-route/angular-route.js"></script>
   <script src="./bower_components/angular-route-styles/route-styles.js"></script>
-  <script src="./js/app.js"></script>
-  <script src="./js/basic.js"></script>
+  <script src="./js/routes.js"></script>
+  <script src="./js/service.js"></script>
   <script src="./js/controllers.js"></script>
 </head>
 
-<body ng-view>
-  <script type="text/ng-template" id="list.html">
-    <ul dnd-list="list">
-      <li ng-repeat="item in list" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{selected: models.selected === item}" class="{{item.id}}" ng-include="item.type + '.html'">
-      </li>
-    </ul>
-  </script>
-  <!-- This template is responsible for rendering a container element. It uses the above list template to render each container column -->
-  <script type="text/ng-template" id="container.html">
-    <div class="container-element box-blue">
-      <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
-      <div class="clearfix"></div>
-    </div>
-  </script>
-  <!-- Template for a normal list item -->
-  <script type="text/ng-template" id="item.html">
-    <div class="box item {{item.model}}">{{item.id}}</div>
-  </script>
-
-  <!-- Template for a heading -->
-  <script type="text/ng-template" id="h1.html">
-    <h1 class="box title {{item.model}}">{{item.id}}</h1>
-  </script>
-    <!-- Template for a heading -->
-  <script type="text/ng-template" id="h2.html">
-    <h2 class="box title {{item.model}}">{{item.id}}</h2>
-  </script>
-  <!-- Template for a title -->
-  <script type="text/ng-template" id="h3.html">
-    <h3 class="box title {{item.model}}">{{item.id}}</h3>
-  </script>
-
-    <!-- Template for a title -->
-  <script type="text/ng-template" id="h4.html">
-    <h3 class="box title {{item.model}}">{{item.id}}</h3>
-  </script>
-    <!-- Template for title -->
-  <script type="text/ng-template" id="h5.html">
-    <h1 class="box title {{item.model}}">{{item.id}}</h1>
-  </script> 
-  <!-- Template for title -->
-  <script type="text/ng-template" id="h6.html">
-    <h4 class="box title {{item.model}}">{{item.id}}</h4>
-  </script>
-
-  <!-- Template for title -->
-  <script type="text/ng-template" id="title.html">
-    <h5 class="box title {{item.model}}">{{item.id}}</h5>
-  </script>
-
-  <!-- Template for title -->
-  <script type="text/ng-template" id="title.html">
-    <h6 class="box title {{item.model}}">{{item.id}}</h6>
-  </script>
-
-  <!-- Template for a bullet -->
-  <script type="text/ng-template" id="bullet.html">
-    <div class="bullet {{item.model}}">• {{item.id}}</div>
-  </script>
-  
-  <!-- Main area with dropzones and source code -->
-<div class="wrapper">
-  <div class="form" ng-show="isFormOpen">
-  <input type="text" ng-model="name">
-    <h2>Generated Model</h2>
-    <pre>{{modelAsJson}}</pre>
-  </div>
-  <div class="demo">
-  <div ng-repeat="(zone, list) in models.dropzones" ng-if="!$last">
-      <div class="dropzone {{zone}}">
-        
-        <!-- The dropzone also uses the list template -->
-        <div ng-include="'list.html'"></div>
-      </div>
-    </div>
-    <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
-  </div>
-  </div>
-</div>
-  
-  <!-- Sidebar -->
-  <div class="sidebar options">
-  <div ng-if="models.selected" class="box box-grey box-padding">
-      <h3>Selected</h3>
-      <strong>Type: </strong> {{models.selected.name}}
-      <br>
-      <input type="text" ng-model="models.selected.id" autofocus="true" class="form-control" style="margin-top: 5px" />
-    </div>
+<body ng-controller="SecondController">
+  <div class="wrapper">
     <div class="toggle">
-        <button class="btn btn-info" ng-click="isFormOpen = !isFormOpen">Show/Hide Form</button>
+      <button class="button-primary" ng-click="isFormOpen = !isFormOpen">Show/Hide Form</button>
     </div>
-    <div class="toolbox box box-grey box-padding">
-      <h3>New Elements</h3>
-      <ul>
-        
-        <!-- The toolbox only allows to copy objects, not move it. After a new
-                 element was created, dnd-copied is invoked and we generate the next id -->
-        <li class="choices" ng-repeat="item in models.templates" dnd-draggable="item" dnd-effect-allowed="copy" dnd-copied="{{item.id}}">
-          <button type="button" class="btn btn-default">{{item.name}}</button>
-        </li>
-      </ul>
+    <div class="form" ng-show="isFormOpen">
+      <form>
+        <div class="row">
+          <div class="six columns">
+            <label for="name">Full Name</label>
+            <input class="u-full-width" type="text" ng-model="name" id="name">
+          </div>
+        </div>
+        <label>Contact</label>
+        <div class="row">
+          <div class="twelve columns">
+            <input class="u-full-width" type="text" ng-model="address.street">
+          </div>
+          <div class="six columns">
+            <input class="u-full-width" type="text" ng-model="address.city">
+          </div>
+          <div class="two columns">
+            <input class="u-full-width" type="text" ng-model="address.state">
+          </div>
+          <div class="three columns">
+            <input class="u-full-width" type="text" ng-model="address.zip">
+          </div>
+        <div class="row">
+          <div class="two columns">
+            <label for="word">
+              <input type="checkbox" id="word" ng-model="word" value="word"> Word</label>
+          </div>
+          <div class="six columns">
+            <label for="icon">
+              <input type="checkbox" id="icon" ng-model="icon" value="icon"> Icon</label>
+          </div>
+        </div>
+          <div class="three columns">
+            <input type="checkbox" ng-model="show1">
+            <select ng-model="icon1" class="">
+              <option ng-value="Email">Email</option>
+              <option ng-value="Phone">Phone</option>
+              <option ng-value="LinkedIn">LinkedIn</option>
+              <option ng-value="Github">Github</option>
+              <option ng-value="Behance">Website</option>
+              <option ng-value="Twitter">Twitter</option>
+              <option ng-value="Skype">Skype</option>
+            </select>
+            <input type="checkbox" ng-model="show2">
+            <select ng-model="icon2" class="">
+              <option ng-value="Email">Email</option>
+              <option ng-value="Phone">Phone</option>
+              <option ng-value="LinkedIn">LinkedIn</option>
+              <option ng-value="Github">Github</option>
+              <option ng-value="Website">Website</option>
+              <option ng-value="Twitter">Twitter</option>
+              <option ng-value="Skype">Skype</option>
+            </select>
+            <input type="checkbox" ng-model="show3">
+            <select ng-model="icon3" class="">
+              <option ng-value="Email">Email</option>
+              <option ng-value="Phone">Phone</option>
+              <option ng-value="LinkedIn">LinkedIn</option>
+              <option ng-value="Github">Github</option>
+              <option ng-value="Website">Website</option>
+              <option ng-value="Twitter">Twitter</option>
+              <option ng-value="Skype">Skype</option>
+            </select>
+            <input type="checkbox" ng-model="show4">
+            <select ng-model="icon4" class="">
+              <option ng-value="Email">Email</option>
+              <option ng-value="Phone">Phone</option>
+              <option ng-value="LinkedIn">LinkedIn</option>
+              <option ng-value="Github">Github</option>
+              <option ng-value="Website">Website</option>
+              <option ng-value="Twitter">Twitter</option>
+              <option ng-value="Skype">Skype</option>
+            </select>
+            <input type="checkbox" ng-model="show5">
+            <select ng-model="icon5" class="">
+              <option ng-value="Email">Email</option>
+              <option ng-value="Phone">Phone</option>
+              <option ng-value="LinkedIn">LinkedIn</option>
+              <option ng-value="Github">Github</option>
+              <option ng-value="Website">Website</option>
+              <option ng-value="Twitter">Twitter</option>
+              <option ng-value="Skype">Skype</option>
+            </select>
+            <input type="checkbox" ng-model="show6">
+            <select ng-model="icon6" class="">
+              <option ng-value="Email">Email</option>
+              <option ng-value="Phone">Phone</option>
+              <option ng-value="LinkedIn">LinkedIn</option>
+              <option ng-value="Github">Github</option>
+              <option ng-value="Website">Website</option>
+              <option ng-value="Twitter">Twitter</option>
+              <option ng-value="Skype">Skype</option>
+            </select>
+          </div>
+          <div class="six columns">
+            <input class="u-full-width" type="text" name="input" ng-model="option1">
+            <input class="u-full-width" type="text" name="input" ng-model="option2">
+            <input class="u-full-width" type="text" name="input" ng-model="option3">
+            <input class="u-full-width" type="text" name="input" ng-model="option4">
+            <input class="u-full-width" type="text" name="input" ng-model="option5">
+            <input class="u-full-width" type="text" name="input" ng-model="option6">
+          </div>
+        </div>
+        <div class="row">
+          <label for="objective">Objective</label>
+          <input class="u-full-width" type="text" ng-model="objective" id="objective">
+        </div>
+        <div class="row">
+          <label>Strength</label><button ng-click="addStrength()">+</button>
+                <h6 ng-repeat="strength in strengths"><input type="text" ng-model="strength.name"><input type="number" name="input" ng-model="strength.amount"
+           min="0" max="100">/100</h6>
+        </div>
+        <div class="row">
+          <label>Experience</label>
+          <button ng-click="addExp()">Add Experience</button>
+          <div class="row xp" ng-repeat="x in experience track by $index" ng-init="index = $index">
+            <input class="u-full-width" type="text" ng-model="x.name">
+            <input class="u-full-width" type="text" ng-model="x.title">
+            <input class="u-full-width" type="text" ng-model="x.when">
+            <ul>
+              <li ng-repeat="r in x.bullets track by $index">
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]">
+              </li>
+            </ul>
+            <button ng-click="addBullet(index)">Add Responsibility</button>
+          </div>
+        </div>
+        <div class="row">
+          <label>Education</label>
+          <button ng-click="addSchool()">Add School</button>
+          <div class="row education" ng-repeat="x in school track by $index" ng-init="index = $index">
+            <input class="u-full-width" type="text" ng-model="x.name">
+            <input class="u-full-width" type="text" ng-model="x.major">
+            <input class="u-full-width" type="text" ng-model="x.when">
+            <input class="u-full-width" type="text" ng-model="x.degree">
+            <input class="u-full-width" type="text" ng-model="x.gpa">
+          </div>
+        </div>
+      </form>
     </div>
-
-    <div ng-repeat="(zone, list) in models.dropzones" ng-if="$last" class="col-md-6">
-      <div class="dropzone {{zone}}">
-        
-        <!-- The dropzone also uses the list template -->
-        <h3>{{zone}}</h3>
-        <div class="waiting"></div>
-        <div ng-include="'list.html'" class="waitlist"></div>
-      </div>
-    </div>
-    <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
-
-    
-
-
-    <div class="trashcan box box-grey box-padding">
-      
-      <!-- If you use [] as referenced list, the dropped elements will be lost -->
-      <h3>Trashcan</h3>
-      <ul dnd-list="[]">
-        <h1>X</h1>
-      </ul>
-    </div>
+    <div ng-view></div>
   </div>
   <div class="layouts sidebar">
-    <a href="#layout1" class="btn btn-default"><button>Layout1</button></a>
-    <a href="#layout2" class="btn btn-default"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT4x3MZl0ct580kvhrVxQTW90ADKsAq1PyKK8dFvicbOCHUgsO_Mw" alt=""></a>
-    <a href="#layout3"  class="btn btn-default"><img src="data:image/jpeg;base64,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" alt=""></a>
+    <a href="#layout1" class="button">
+      <button>Layout1</button>
+    </a>
+    <a href="#layout2" class="button"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT4x3MZl0ct580kvhrVxQTW90ADKsAq1PyKK8dFvicbOCHUgsO_Mw" alt=""></a>
+    <a href="#layout3" class="button"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZFq_f8Lm-_wP-avqvjNylJT6i6Wvnj-327L1TtlzCvAxLBDWsbQ" alt=""></a>
   </div>
 </body>
 

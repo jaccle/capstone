@@ -1,0 +1,25 @@
+.name {
+	font-size: 150px;
+	text-align: center;
+}
+
+p {
+	font-size: 12px;
+	margin: 0;
+}
+.progress {
+	background-color: #aaa;
+	height: 12px;
+}
+li {
+	font-size: 12px;
+	margin: 0 0 0 20px;
+}
+
+h4, h5, h6 {
+	margin: 0 auto;
+}
+
+.experience, .school {
+	margin: 0 0 0 10px;
+}
