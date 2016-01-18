@@ -4,7 +4,8 @@
   border: 2px solid #ddd;
   padding: .8in;
   width: 8.5in;
-  height: 11in; }
+  height: 11in;
+  overflow: hidden; }
 
 .wrapper {
   position: absolute;
@@ -13,9 +14,21 @@
 
 .form {
   margin: 30px; }
-  .form .education, .form .xp {
+  .form label {
+    display: inline-block; }
+  .form button {
+    height: 30px;
+    padding: 0 20px;
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 30px; }
+  .form .education,
+  .form .xp,
+  .form .other {
     padding: 10px; }
-  .form .education:nth-child(even), .form .xp:nth-child(even) {
+  .form .education:nth-child(even),
+  .form .xp:nth-child(even),
+  .form .other:nth-child(even) {
     background-color: #eee; }
 
 /***************************** Sidebar *****************************/

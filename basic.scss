@@ -5,6 +5,7 @@
     padding: .8in;
     width: 8.5in;
     height: 11in;
+    overflow: hidden;
 }
 
 .wrapper {
@@ -15,10 +16,24 @@
 
 .form {
     margin: 30px;
-    .education, .xp {
+    label {
+        display: inline-block;
+    }
+    button {
+        height: 30px;
+        padding: 0 20px;
+        font-size: 9px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+    .education,
+    .xp,
+    .other {
         padding: 10px;
     }
-    .education:nth-child(even),.xp:nth-child(even) {
+    .education:nth-child(even),
+    .xp:nth-child(even),
+    .other:nth-child(even) {
         background-color: #eee;
     }
 }

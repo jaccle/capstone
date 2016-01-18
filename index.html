@@ -45,85 +45,33 @@
           <div class="three columns">
             <input class="u-full-width" type="text" ng-model="address.zip">
           </div>
-        <div class="row">
-          <div class="two columns">
-            <label for="word">
-              <input type="checkbox" id="word" ng-model="word" value="word"> Word</label>
+          <div class="row" class="twelve columns">
+            <div class="two columns">
+              <label for="word">
+                <input type="checkbox" id="word" ng-model="word" value="word"> Word</label>
+            </div>
+            <div class="two columns">
+              <label for="icon">
+                <input type="checkbox" id="icon" ng-model="icon" ng-init="icon=true" value="icon"> Icon</label>
+            </div>
+            <div class="seven columns"><button ng-click="addContact()">+ Contact/Media</button></div>
           </div>
-          <div class="six columns">
-            <label for="icon">
-              <input type="checkbox" id="icon" ng-model="icon" value="icon"> Icon</label>
-          </div>
-        </div>
-          <div class="three columns">
-            <input type="checkbox" ng-model="show1">
-            <select ng-model="icon1" class="">
-              <option ng-value="Email">Email</option>
-              <option ng-value="Phone">Phone</option>
-              <option ng-value="LinkedIn">LinkedIn</option>
-              <option ng-value="Github">Github</option>
-              <option ng-value="Behance">Website</option>
-              <option ng-value="Twitter">Twitter</option>
-              <option ng-value="Skype">Skype</option>
-            </select>
-            <input type="checkbox" ng-model="show2">
-            <select ng-model="icon2" class="">
-              <option ng-value="Email">Email</option>
-              <option ng-value="Phone">Phone</option>
-              <option ng-value="LinkedIn">LinkedIn</option>
-              <option ng-value="Github">Github</option>
-              <option ng-value="Website">Website</option>
-              <option ng-value="Twitter">Twitter</option>
-              <option ng-value="Skype">Skype</option>
-            </select>
-            <input type="checkbox" ng-model="show3">
-            <select ng-model="icon3" class="">
-              <option ng-value="Email">Email</option>
-              <option ng-value="Phone">Phone</option>
-              <option ng-value="LinkedIn">LinkedIn</option>
-              <option ng-value="Github">Github</option>
-              <option ng-value="Website">Website</option>
-              <option ng-value="Twitter">Twitter</option>
-              <option ng-value="Skype">Skype</option>
-            </select>
-            <input type="checkbox" ng-model="show4">
-            <select ng-model="icon4" class="">
-              <option ng-value="Email">Email</option>
-              <option ng-value="Phone">Phone</option>
-              <option ng-value="LinkedIn">LinkedIn</option>
-              <option ng-value="Github">Github</option>
-              <option ng-value="Website">Website</option>
-              <option ng-value="Twitter">Twitter</option>
-              <option ng-value="Skype">Skype</option>
-            </select>
-            <input type="checkbox" ng-model="show5">
-            <select ng-model="icon5" class="">
-              <option ng-value="Email">Email</option>
-              <option ng-value="Phone">Phone</option>
-              <option ng-value="LinkedIn">LinkedIn</option>
-              <option ng-value="Github">Github</option>
-              <option ng-value="Website">Website</option>
-              <option ng-value="Twitter">Twitter</option>
-              <option ng-value="Skype">Skype</option>
-            </select>
-            <input type="checkbox" ng-model="show6">
-            <select ng-model="icon6" class="">
-              <option ng-value="Email">Email</option>
-              <option ng-value="Phone">Phone</option>
-              <option ng-value="LinkedIn">LinkedIn</option>
-              <option ng-value="Github">Github</option>
-              <option ng-value="Website">Website</option>
-              <option ng-value="Twitter">Twitter</option>
-              <option ng-value="Skype">Skype</option>
-            </select>
-          </div>
-          <div class="six columns">
-            <input class="u-full-width" type="text" name="input" ng-model="option1">
-            <input class="u-full-width" type="text" name="input" ng-model="option2">
-            <input class="u-full-width" type="text" name="input" ng-model="option3">
-            <input class="u-full-width" type="text" name="input" ng-model="option4">
-            <input class="u-full-width" type="text" name="input" ng-model="option5">
-            <input class="u-full-width" type="text" name="input" ng-model="option6">
+          <div class="row" ng-repeat="m in contacts">
+            <div class="three columns">
+              <input type="checkbox" ng-model="m['show'+$index]" ng-init="m['show'+$index]=true">
+              <select ng-model="m.type" class="">
+                <option ng-value="Email">Email</option>
+                <option ng-value="Phone">Phone</option>
+                <option ng-value="LinkedIn">LinkedIn</option>
+                <option ng-value="Github">Github</option>
+                <option ng-value="Website">Website</option>
+                <option ng-value="Twitter">Twitter</option>
+                <option ng-value="Skype">Skype</option>
+              </select>
+            </div>
+            <div class="six columns">
+              <input class="u-full-width" type="text" name="input" ng-model="m.text">
+            </div>
           </div>
         </div>
         <div class="row">
@@ -131,9 +79,40 @@
           <input class="u-full-width" type="text" ng-model="objective" id="objective">
         </div>
         <div class="row">
-          <label>Strength</label><button ng-click="addStrength()">+</button>
-                <h6 ng-repeat="strength in strengths"><input type="text" ng-model="strength.name"><input type="number" name="input" ng-model="strength.amount"
+          <label>Strength</label>
+          <button ng-click="addStrength()">+</button>
+          <h6 ng-repeat="strength in strengths"><input type="text" ng-model="strength.name" maxlength="11"><input type="number" name="input" ng-model="strength.amount"
            min="0" max="100">/100</h6>
+        </div>
+        <div class="row">
+          <label for="languages">Languages</label>
+          <button ng-click="addLang()">+</button>
+          <div class="row" ng-repeat="l in languages">
+            <div class="four columns">
+              <input class="u-full-width" type="text" ng-model="l.language">
+            </div>
+            <div class="four columns">
+              <select class="u-full-width" ng-model="l.proficiency">
+                <option ng-value="Native">Native</option>
+                <option ng-value="Fluent">Fluent</option>
+                <option ng-value="Business">Business</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <label>Other (side column)</label>
+          <button ng-click="addSide()">Add More</button>
+          <div class="row other" ng-repeat="x in otherSide" ng-init="index = $index">
+            <input class="u-full-width" type="text" ng-model="x.name" placeholder="Resume Section Title">
+            <input class="u-full-width" type="text" ng-model="x.title" placeholder="Subtitle">
+            <input class="u-full-width" type="text" ng-model="x.text" placeholder="Text">
+            <ul>
+              <li ng-repeat="r in x.bullets track by $index">
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]"><button ng-click="remove(r, $index)" placeholder="Bullet point">-</button></li>
+                <button ng-click="addSideBull(index)">Add Bullet</button>
+            </ul>
+          </div>
         </div>
         <div class="row">
           <label>Experience</label>
@@ -146,8 +125,8 @@
               <li ng-repeat="r in x.bullets track by $index">
                 <input class="u-most-width" type="text" ng-model="x.bullets[$index]">
               </li>
-            </ul>
             <button ng-click="addBullet(index)">Add Responsibility</button>
+            </ul>
           </div>
         </div>
         <div class="row">
@@ -160,6 +139,23 @@
             <input class="u-full-width" type="text" ng-model="x.degree">
             <input class="u-full-width" type="text" ng-model="x.gpa">
           </div>
+        </div>
+        <div class="row">
+            <div class="row">
+          <label>Other (main area)</label>
+          <button ng-click="addMain()">Add More</button>
+          <div class="row other" ng-repeat="x in otherMain" ng-init="index = $index">
+            <input class="u-full-width" type="text" ng-model="x.name" placeholder="Resume Section Title">
+            <input class="u-full-width" type="text" ng-model="x.title" placeholder="Subtitle">
+            <input class="u-full-width" type="text" ng-model="x.text" placeholder="Text">
+            <ul>
+              <li ng-repeat="r in x.bullets track by $index">
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]" placeholder="Bullet point">
+              </li>
+            <button ng-click="addMainBull(index)">Add Bullet</button>
+            </ul>
+          </div>
+        </div>
         </div>
       </form>
     </div>

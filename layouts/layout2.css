@@ -1,25 +1,67 @@
 .name {
-	font-size: 150px;
-	text-align: center;
-}
+  font-size: 150px;
+  text-align: center; }
 
 p {
-	font-size: 12px;
-	margin: 0;
-}
+  font-size: 12px;
+  margin: 0; }
+
+.header {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-transform: uppercase; }
+
 .progress {
-	background-color: #aaa;
-	height: 12px;
-}
+  background-color: #aaa;
+  display: inline-block;
+  position: relative;
+  height: 12px;
+  margin: 1px 0; }
+
+.strength {
+  float: left;
+  width: 45%;
+  overflow: hidden;
+  clear: left;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.language {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  display: block;
+  border-radius: 50%;
+  margin: 5px auto;
+  text-align: center;
+  padding: 35px 5px;
+  width: 100px; }
+
+.Native {
+  color: black;
+  border: 5px solid black; }
+
+.Fluent {
+  color: #333;
+  border: 5px solid #333; }
+
+.Business {
+  color: #666;
+  border: 5px solid #666; }
+
 li {
-	font-size: 12px;
-	margin: 0 0 0 20px;
-}
+  font-size: 12px;
+  margin: 0 0 0 20px; }
 
-h4, h5, h6 {
-	margin: 0 auto;
-}
+h4,
+h5,
+h6 {
+  margin: 0 auto; }
 
-.experience, .school {
-	margin: 0 0 0 10px;
-}
+.experience,
+.school {
+  margin: 0 0 0 10px; }
+
+/*# sourceMappingURL=layout2.css.map */

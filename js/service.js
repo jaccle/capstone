@@ -21,11 +21,26 @@ angular.module("capstone").factory('DummyFormData', function () {
         state: "CA",
         zip: "94105"
     },
+    contacts = [{
+        type: 'Email', text: 'example@example.com'
+    }],
     experience = [{
             name: 'Name',
             title: 'Title',
             when: 'When',
             bullets: ['I had this responsibility','and this responsibility']
+        }],
+    otherSide = [{
+            name: '',
+            title: '',
+            text: '',
+            bullets: ['']
+        }],
+    otherMain = [{
+            name: '',
+            title: '',
+            text: '',
+            bullets: ['']
         }],
     school = [{
             name: 'School',
@@ -35,6 +50,7 @@ angular.module("capstone").factory('DummyFormData', function () {
             gpa: 'GPA'
         }],
     strengths = [{name: 'Strength', amount: 50}],
+    languages = [{language: 'English', proficiency: 'Native'}],
     objective = "Get job at super duper cool company";
     return {
         templates: function () {
@@ -46,11 +62,8 @@ angular.module("capstone").factory('DummyFormData', function () {
         address: function () {
             return address;
         },
-        phone: function () {
-            return phone;
-        },
-        email: function () {
-            return email;
+        contacts: function () {
+            return contacts;
         },
         experience: function () {
             return experience;
@@ -61,8 +74,17 @@ angular.module("capstone").factory('DummyFormData', function () {
         objective: function () {
             return objective;
         },
+        languages: function () {
+            return languages;
+        },
         strengths: function () {
             return strengths;
+        },
+        otherSide: function () {
+            return otherSide;
+        },
+        otherMain: function () {
+            return otherMain;
         }
     };
 });

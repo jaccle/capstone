@@ -9,12 +9,18 @@
         <p>{{objective}}</p>
       </div>
       <div class="strengths">
-      	<h5>Strengths</h5>
-      	<table>
-      		<tbody>
-      			<tr ng-repeat="s in strengths"><td>{{s.name + ' '}} </td><td><span class="progress" style="padding-right: {{s.amount/2}}%"></span></td></tr>
-      		</tbody>
-      	</table>
+        <h5>Strengths</h5>
+        <div ng-repeat="s in strengths" class="header clear row"><span class="strength">{{s.name + ' '}}</span> <span class="progress" style="padding-left: {{s.amount/2}}%">
+        </span></div>
+      </div>
+      <div class="row">
+        <h5>Languages</h5>
+        <div class="row" ng-repeat="l in languages">
+          <div class="language {{l.proficiency}}">
+            {{l.language}}
+            <br> {{l.proficiency}}
+          </div>
+        </div>
       </div>
       <div class="contact">
         <h5>Contact</h5>
@@ -29,23 +35,13 @@
             <p>{{address.city}}, {{address.state}} {{address.zip}}</p>
           </div>
         </div>
-        <div class="row">
+        <div class="row" ng-repeat="c in contacts">
           <div ng-show="icon" class="one column">
-            <p ng-show="show1"><img class="icon" src="./layouts/icons/{{icon1}}.png" alt=""></p>
-            <p ng-show="show2"><img class="icon" src="./layouts/icons/{{icon2}}.png" alt=""></p>
-            <p ng-show="show3"><img class="icon" src="./layouts/icons/{{icon3}}.png" alt=""></p>
-            <p ng-show="show4"><img class="icon" src="./layouts/icons/{{icon4}}.png" alt=""></p>
-            <p ng-show="show5"><img class="icon" src="./layouts/icons/{{icon5}}.png" alt=""></p>
-            <p ng-show="show6"><img class="icon" src="./layouts/icons/{{icon6}}.png" alt=""></p>
+            <p ng-show="c['show'+$index]"><img class="icon" src="./layouts/icons/{{c.type}}.png" alt=""></p>
           </div>
           <div class="one column"></div>
           <div class="ten columns">
-            <p ng-show="show1"><span>{{icon1}}: </span>{{option1}}</p>
-            <p ng-show="show2"><span ng-show="word">{{icon2}}: </span>{{option2}}</p>
-            <p ng-show="show3"><span ng-show="word">{{icon3}}: </span>{{option3}}</p>
-            <p ng-show="show4"><span ng-show="word">{{icon4}}: </span>{{option4}}</p>
-            <p ng-show="show5"><span ng-show="word">{{icon5}}: </span>{{option5}}</p>
-            <p ng-show="show6"><span ng-show="word">{{icon6}}: </span>{{option6}}</p>
+            <p ng-show="c['show'+$index]"><span ng-show="word">{{c.type}}: </span>{{c.text}}</p>
           </div>
         </div>
       </div>
