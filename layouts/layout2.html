@@ -5,16 +5,16 @@
   <div class="row">
     <div class="one-third column">
       <div class="objective">
-        <h5>Objective</h5>
+        <h5 ng-hide="objective === ''">Objective</h5>
         <p>{{objective}}</p>
       </div>
       <div class="strengths">
-        <h5>Strengths</h5>
+        <h5 ng-hide="strengths.length === 0">Strengths</h5>
         <div ng-repeat="s in strengths" class="header clear row"><span class="strength">{{s.name + ' '}}</span> <span class="progress" style="padding-left: {{s.amount/2}}%">
         </span></div>
       </div>
       <div class="row">
-        <h5>Languages</h5>
+        <h5 ng-hide="strengths.length === 0">Languages</h5>
         <div class="row" ng-repeat="l in languages">
           <div class="language {{l.proficiency}}">
             {{l.language}}
@@ -23,13 +23,13 @@
         </div>
       </div>
       <div ng-repeat="o in otherSide">
-        <h4 ng-if="o.name !== ''">{{o.name}}</h4>
-          <h5 ng-if="o.title !== ''">{{o.title}}</h5>
-          <h6 ng-if="o.text !== ''">{{o.text}}</h6>
-          <ul>
-            <li ng-if="o.bullets[$index] !== ''" ng-repeat="b in o.bullets">{{b}}</li>
-          </ul>
-        </div>
+        <h4 ng-show="o.name !== ''">{{o.name}}</h4>
+        <h5 ng-show="o.title !== ''">{{o.title}}</h5>
+        <h6 ng-show="o.text !== ''">{{o.text}}</h6>
+        <ul>
+          <li ng-hide="o.bullets[$index] === ''" ng-repeat="b in o.bullets">{{b}}</li>
+        </ul>
+      </div>
       <div class="contact">
         <h5>Contact</h5>
         <div class="row">
@@ -43,7 +43,7 @@
             <p>{{address.city}}, {{address.state}} {{address.zip}}</p>
           </div>
         </div>
-        <div class="row" ng-repeat="c in contacts">
+        <div class="row" ng-hide="contacts.length === 0" ng-repeat="c in contacts">
           <div ng-show="icon" class="one column">
             <p ng-show="c['show'+$index]"><img class="icon" src="./layouts/icons/{{c.type}}.png" alt=""></p>
           </div>
@@ -56,30 +56,30 @@
     </div>
     <div class="two-thirds column">
       <div class="row">
-        <h4>Experience</h4>
-        <div class="experience" ng-repeat="e in experience track by $index">
+        <h4 ng-hide="experience.length === 0">Experience</h4>
+        <div class="experience" ng-repeat="e in experience track by $index" ng-hide="experience.length === 0">
           <h5 class="company section">{{e.name}}</h5>
-          <h6 class="title">{{e.title}} | {{e.when}}</h6>
+          <h6 class="title"><span ng-hide="e.title === ''">{{e.title}}</span><span ng-hide="e.title === '' || e.when === ''"> | </span><span ng-hide="e.when === ''">{{e.when}}</span></h6>
           <ul>
-            <li ng-repeat="r in e.bullets track by $index">{{r}}</li>
+            <li ng-repeat="r in e.bullets track by $index" ng-hide="r === ''">{{r}}</li>
           </ul>
         </div>
       </div>
       <div class="row">
-        <h4>Education</h4>
-        <div class="row school" ng-repeat="e in school track by $index">
+        <h4 ng-hide="school.length === 0">Education</h4>
+        <div class="row school" ng-repeat="e in school track by $index" ng-hide="school.length === 0">
           <h5 class="school section">{{e.name}}</h5>
-          <h6>{{e.degree}} in {{e.major}}</h6>
-          <h6 class="header">Graduated: {{e.when}} | GPA: {{e.gpa}}</h6>
+          <h6><span ng-hide="e.degree === ''">{{e.degree}}</span><span ng-hide="e.degree === '' || e.major === ''"> in </span><span ng-hide="e.major === ''">{{e.major}}</span></h6>
+          <h6 class="header"><span ng-hide="e.when === ''">Graduated: {{e.when}}</span><span ng-hide="e.when === '' || e.gpa === ''"> | </span><span ng-hide="e.gpa === ''">GPA: {{e.gpa}}</span></h6>
         </div>
       </div>
       <div class="row">
         <div class="other" ng-repeat="o in otherMain">
-        <h4 ng-if="o.name !== ''">{{o.name}}</h4>
-          <h5 ng-if="o.title !== ''">{{o.title}}</h5>
-          <h6 ng-if="o.text !== ''">{{o.text}}</h6>
+          <h4 ng-show="o.name !== ''">{{o.name}}</h4>
+          <h5 ng-show="o.title !== ''">{{o.title}}</h5>
+          <h6 ng-show="o.text !== ''">{{o.text}}</h6>
           <ul>
-            <li ng-if="o.bullets[$index] !== ''" ng-repeat="b in o.bullets">{{b}}</li>
+            <li ng-hide="o.bullets[$index] === ''" ng-repeat="b in o.bullets">{{b}}</li>
           </ul>
         </div>
       </div>

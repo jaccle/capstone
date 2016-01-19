@@ -123,6 +123,7 @@ angular.module("capstone")
     };
     $scope.remove = function(what, i) {
         what.splice(i, 1);
+        console.log(what);
     };
 
 

@@ -1,0 +1,129 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+@mixin uppercase ($size:11px) {
+    font-size: $size;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+//////////////////////////////////////////////////////////////
+.one-third {
+    background-color: #ddd;
+    padding: 10px;
+    .ribbon {
+        // font-size: 16px !important;
+        /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+        // width: 50%;
+        position: relative;
+        background: #aaa;//#ba89b6;
+        color: #fff;
+        text-align: center;
+        padding: .5em 2em;
+        /* Adjust to suit */
+        margin: 1em -33px .5em;
+        /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+    }
+    .first {
+        margin-top: -10px;
+    }
+    .ribbon .ribbon-content:before,
+    .ribbon .ribbon-content:after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #807080 transparent transparent transparent;//#804f7c transparent transparent transparent;
+        bottom: -1em;
+    }
+    .ribbon .ribbon-content:before {
+        left: 0;
+        border-width: 1em 0 0 1em;
+    }
+    .ribbon .ribbon-content:after {
+        right: 0;
+        border-width: 1em 1em 0 0;
+    }
+}
+
+.name {
+    font-size: 90px;
+}
+
+p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.header {
+    @include uppercase;
+}
+
+.section {
+    @include uppercase(20px)
+}
+
+.progress {
+    background-color: #aaa;
+    display: inline-block;
+    position: relative;
+    height: 12px;
+    margin: 1px 0;
+}
+
+.strength {
+    float: left;
+    width: 45%;
+    overflow: hidden;
+    clear: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin circle ($color) {
+    color: $color;
+    border: 5px solid $color;
+}
+
+.language {
+    @include uppercase;
+    display: block;
+    border-radius: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 35px 5px;
+    width: 100px;
+}
+
+.Native {
+    @include circle(black);
+}
+
+.Fluent {
+    @include circle(#333);
+}
+
+.Business {
+    @include circle(#666);
+}
+
+li {
+    font-size: 12px;
+    margin: 0 0 0 20px;
+}
+
+h4,
+h5,
+h6 {
+    margin: 0 auto;
+}
+
+.experience,
+.school,
+.other {
+    margin: 0 0 0 10px;
+}
