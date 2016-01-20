@@ -2,28 +2,6 @@ angular.module("capstone")
 
 .controller("FirstController", ['$scope', 'DummyFormData', function($scope, DummyFormData) {
 
-    function capitalize(s) {
-        return s[0].toUpperCase() + s.substr(1);
-    }
-
-    function item(type, model) {
-        return {
-            "type": type,
-            'name': capitalize(type),
-            'id': $scope.model,
-            'model': model.toString()
-        };
-    }
-
-    function variation(type, name, model) {
-        return {
-            'type': type,
-            'name': capitalize(name),
-            'id': $scope.model,
-            'model': model
-        };
-    }
-
     $scope.models = {
         selected: null,
         templates: DummyFormData.templates(),
@@ -32,6 +10,16 @@ angular.module("capstone")
                 "type": "h1",
                 "name": "Title1",
                 "id": "Build your own",
+                'model': 'name'
+            },{
+                "type": "item",
+                "name": "Item",
+                "id": "We're all drag and drop! Get more over there <<<<<<",
+                'model': 'example'
+            },{
+                "type": "h5",
+                "name": "Title5",
+                "id": "Click on us to edit text!",
                 'model': 'name'
             }],
             "Waitlist": [{

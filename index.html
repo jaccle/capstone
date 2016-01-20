@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css">
   <link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css">
   <link rel="stylesheet" href="./basic.css">
-  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./layouts/form.css">
   <script src="./bower_components/angular/angular.js"></script>
   <script src="./bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
@@ -54,9 +53,12 @@
               <label for="icon">
                 <input type="checkbox" id="icon" ng-model="icon" ng-init="icon=true" value="icon"> Icon</label>
             </div>
-            <div class="seven columns"><button ng-click="addContact()">+ Contact/Media</button></div>
+            <div class="seven columns">
+              <button ng-click="addContact()">+ Contact/Media</button>
+            </div>
           </div>
-          <div class="row" ng-repeat="m in contacts"><button ng-click="remove(contacts, $index)">X</button>
+          <div class="row" ng-repeat="m in contacts">
+            <button ng-click="remove(contacts, $index)">X</button>
             <div class="three columns">
               <input type="checkbox" ng-model="m['show'+$index]" ng-init="m['show'+$index]=true">
               <select ng-model="m.type" class="">
@@ -87,7 +89,8 @@
         <div class="row">
           <label for="languages">Languages</label>
           <button ng-click="addLang()">+</button>
-          <div class="row" ng-repeat="l in languages"><button ng-click="remove(languages, $index)">X</button>
+          <div class="row" ng-repeat="l in languages">
+            <button ng-click="remove(languages, $index)">X</button>
             <div class="four columns">
               <input class="u-full-width" type="text" ng-model="l.language">
             </div>
@@ -103,36 +106,42 @@
         <div class="row">
           <label>Other (side column)</label>
           <button ng-click="addSide()">Add More</button>
-          <div class="row other" ng-repeat="x in otherSide" ng-init="index = $index"><button ng-click="remove(otherSide, $index)">X</button>
+          <div class="row other" ng-repeat="x in otherSide" ng-init="index = $index">
+            <button ng-click="remove(otherSide, $index)">X</button>
             <input class="u-full-width" type="text" ng-model="x.name" placeholder="Resume Section Title">
             <input class="u-full-width" type="text" ng-model="x.title" placeholder="Subtitle">
             <input class="u-full-width" type="text" ng-model="x.text" placeholder="Text">
             <ul>
               <li ng-repeat="r in x.bullets track by $index">
-                <input class="u-most-width" type="text" ng-model="x.bullets[$index]"><button ng-click="remove(x.bullets, $index)">X</button></li>
-                <button ng-click="addSideBull(index)">Add Bullet</button>
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]">
+                <button ng-click="remove(x.bullets, $index)">X</button>
+              </li>
+              <button ng-click="addSideBull(index)">Add Bullet</button>
             </ul>
           </div>
         </div>
         <div class="row">
           <label>Experience</label>
           <button ng-click="addExp()">Add Experience</button>
-          <div class="row xp" ng-repeat="x in experience track by $index" ng-init="index = $index"><button ng-click="remove(experience, $index)">X</button>
+          <div class="row xp" ng-repeat="x in experience track by $index" ng-init="index = $index">
+            <button ng-click="remove(experience, $index)">X</button>
             <input class="u-full-width" type="text" ng-model="x.name">
             <input class="u-full-width" type="text" ng-model="x.title">
             <input class="u-full-width" type="text" ng-model="x.when">
             <ul>
               <li ng-repeat="r in x.bullets track by $index">
-                <input class="u-most-width" type="text" ng-model="x.bullets[$index]"><button ng-click="remove(x.bullets, $index)">X</button>
+                <input class="u-most-width" type="text" ng-model="x.bullets[$index]">
+                <button ng-click="remove(x.bullets, $index)">X</button>
               </li>
-            <button ng-click="addBullet(index)">Add Responsibility</button>
+              <button ng-click="addBullet(index)">Add Responsibility</button>
             </ul>
           </div>
         </div>
         <div class="row">
           <label>Education</label>
           <button ng-click="addSchool()">Add School</button>
-          <div class="row education" ng-repeat="x in school track by $index" ng-init="index = $index"><button ng-click="remove(school, $index)">X</button>
+          <div class="row education" ng-repeat="x in school track by $index" ng-init="index = $index">
+            <button ng-click="remove(school, $index)">X</button>
             <input class="u-full-width" type="text" ng-model="x.name">
             <input class="u-full-width" type="text" ng-model="x.major">
             <input class="u-full-width" type="text" ng-model="x.when">
@@ -141,21 +150,26 @@
           </div>
         </div>
         <div class="row">
-            <div class="row">
-          <label>Other (main area)</label>
-          <button ng-click="addMain()">Add More</button>
-          <div class="row other" ng-repeat="x in otherMain" ng-init="index = $index"><button ng-click="remove(otherMain, $index)" placeholder="Bullet point">X</button>
-            <input class="u-full-width" type="text" ng-model="x.name" placeholder="Resume Section Title">
-            <input class="u-full-width" type="text" ng-model="x.title" placeholder="Subtitle">
-            <input class="u-full-width" type="text" ng-model="x.text" placeholder="Text">
-            <ul>
-              <li ng-repeat="r in x.bullets track by $index">
-                <input class="u-most-width" type="text" ng-model="x.bullets[$index]" placeholder="Bullet point"><button ng-click="remove(x.bullets, $index)">X</button>
-              </li>
-            <button ng-click="addMainBull(index)">Add Bullet</button>
-            </ul>
+          <div class="row">
+            <label>Other (main area)</label>
+            <button ng-click="addMain()">Add More</button>
+            <div class="row other" ng-repeat="x in otherMain" ng-init="index = $index">
+              <button ng-click="remove(otherMain, $index)" placeholder="Bullet point">X</button>
+              <input class="u-full-width" type="text" ng-model="x.name" placeholder="Resume Section Title">
+              <input class="u-full-width" type="text" ng-model="x.title" placeholder="Subtitle">
+              <input class="u-full-width" type="text" ng-model="x.text" placeholder="Text">
+              <ul>
+                <li ng-repeat="r in x.bullets track by $index">
+                  <input class="u-most-width" type="text" ng-model="x.bullets[$index]" placeholder="Bullet point">
+                  <button ng-click="remove(x.bullets, $index)">X</button>
+                </li>
+                <button ng-click="addMainBull(index)">Add Bullet</button>
+              </ul>
+            </div>
           </div>
         </div>
+        <div class="toggle">
+          <button class="button-primary" ng-click="isFormOpen = !isFormOpen">Edit (Toggle Form)</button>
         </div>
       </form>
     </div>
@@ -163,10 +177,10 @@
   </div>
   <div class="layouts sidebar">
     <a href="#layout1" class="button">
-      <button>Layout1</button>
+      <button>Custom</button>
     </a>
     <a href="#layout2" class="button"><img src="./layout2.png" alt=""></a>
-    <a href="#layout3" class="button"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZFq_f8Lm-_wP-avqvjNylJT6i6Wvnj-327L1TtlzCvAxLBDWsbQ" alt=""></a>
+    <a href="#layout3" class="button"><img src="./layout3.png" alt=""></a>
   </div>
 </body>
 

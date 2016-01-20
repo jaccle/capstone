@@ -1,9 +1,7 @@
 angular.module("capstone").factory('DummyFormData', function () {
     var templates = [
             {'type': "item", "name": "Item", 'id': "Item"},
-            {'type': "container", "name": "2 Columns", 'columns': [[], []]},
-            {'type': "container", "name": "3 Columns", 'columns': [[], [], [] ]},
-            {'type': "container", "name": "4 Columns", 'columns': [[], [], [], []]},
+            {'type': "container", "name": "2 Columns", 'id': 'Container', 'columns': [[], []]},
             {'type': "h1", "name": "Title 1", 'id': "Title"},
             {'type': "h2", "name": "Title 2", 'id': "Title"},
             {'type': "h3", "name": "Title 3", 'id': "Title"},
@@ -21,12 +19,30 @@ angular.module("capstone").factory('DummyFormData', function () {
     },
     contacts = [{
         type: 'Email', text: 'example@example.com'
+    },{
+        type: 'Phone', text: '123.456.7890'
+    },{
+        type: 'Github', text: 'github.com/username'
+    },{
+        type: 'Website', text: 'example.com'
+    },{
+        type: 'Twitter', text: '@example'
     }],
     experience = [{
             name: 'Name',
             title: 'Title',
             when: 'When',
-            bullets: ['I had this responsibility','and this responsibility']
+            bullets: ['I had this responsibility','and this responsibility', 'and this responsibility which was this and did this', 'and this responsibility all the time all day every day and it was so totally cool']
+        },{
+            name: 'Name',
+            title: 'Title',
+            when: 'When',
+            bullets: ['I had this responsibility','and this responsibility', 'and I did this other thing where I did stuff', 'and I was in charge of this']
+        },{
+            name: 'Name',
+            title: 'Title',
+            when: 'When',
+            bullets: ['I had this responsibility','and this responsibility', 'and this responsibility all the time all day every day and it was so totally cool']
         }],
     otherSide = [{
             name: '',
@@ -41,15 +57,21 @@ angular.module("capstone").factory('DummyFormData', function () {
             bullets: ['']
         }],
     school = [{
-            name: 'School',
-            when: 'Graduation date',
-            major: 'Major/Focus',
-            degree: 'Degree',
-            gpa: 'GPA'
+            name: 'University of School',
+            when: '1999',
+            major: 'Interestingness',
+            degree: 'BA',
+            gpa: '4.0'
+        },{
+            name: 'Important School',
+            when: '1995',
+            major: 'Trivia',
+            degree: 'BS',
+            gpa: '3.5'
         }],
-    strengths = [{name: 'Strength', amount: 50}],
-    languages = [{language: 'English', proficiency: 'Native'}],
-    objective = "Get job at super duper cool company";
+    strengths = [{name: 'Strength', amount: 50},{name: 'Respect', amount: 99},{name: 'Mad Skills', amount: 70},{name: 'Lorem', amount: 45},{name: 'Ipsum', amount: 80}],
+    languages = [{language: 'English', proficiency: 'Native'}, {language: 'Pig Latin', proficiency: 'Business'}],
+    objective = "Get job at super duper cool company that values the important stuff and I can show off my skills";
     return {
         templates: function () {
             return templates;

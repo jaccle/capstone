@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
-* {
-  font-family: 'Oswald', sans-serif; }
+.demo {
+  padding-right: 1.5in;
+  padding-left: 1.2in; }
+  .demo * {
+    font-family: 'Oswald', sans-serif; }
 
 .one-third {
   background-color: #ddd;
@@ -35,12 +38,14 @@
 .name {
   font-size: 90px; }
 
-p {
-  font-size: 12px;
+p,
+h6,
+li {
+  font-size: 18px;
   margin: 0; }
 
 .header {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: .1rem;
   text-transform: uppercase; }
@@ -55,8 +60,8 @@ p {
   background-color: #aaa;
   display: inline-block;
   position: relative;
-  height: 12px;
-  margin: 1px 0; }
+  height: 14px;
+  margin: 2px 0; }
 
 .strength {
   float: left;
@@ -64,10 +69,11 @@ p {
   overflow: hidden;
   clear: left;
   text-overflow: ellipsis;
-  white-space: nowrap; }
+  white-space: nowrap;
+  height: 20px; }
 
 .language {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: .1rem;
   text-transform: uppercase;
@@ -94,14 +100,23 @@ li {
   font-size: 12px;
   margin: 0 0 0 20px; }
 
+.indent {
+  margin-left: 20px;
+  margin-bottom: 10px; }
+
 h4,
 h5,
 h6 {
+  font-size: xxl;
   margin: 0 auto; }
 
 .experience,
 .school,
 .other {
   margin: 0 0 0 10px; }
+  .experience .bullets,
+  .school .bullets,
+  .other .bullets {
+    font-size: 14px; }
 
 /*# sourceMappingURL=layout3.css.map */
