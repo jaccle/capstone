@@ -12,8 +12,7 @@
     text-transform: uppercase;
 }
 
-#layout2 {
-    .name {
+.name {
     font-size: 150px;
     margin: 0;
     text-align: center;
@@ -47,8 +46,7 @@ h4 {
 }
 
 .section {
-    @include uppercase(14 * .014in);
-    color: #444;
+    @include uppercase(14 * .014in)
 }
 
 .progress {
@@ -79,7 +77,7 @@ h4 {
     border-radius: 50%;
     margin: 5 * .014in auto;
     text-align: center;
-    padding: 37 * .014in 5 * .014in;
+    padding: 35 * .014in 5 * .014in;
     width: 100 * .014in;
 }
 
@@ -110,5 +108,4 @@ h6 {
 .school,
 .other {
     margin: 0 0 0 10 * .014in;
-}
 }

@@ -3,49 +3,58 @@
 .layout3 {
   display: none; }
 
-#layout2 .name {
+.name {
   font-size: 150px;
   margin: 0;
   text-align: center; }
-#layout2 .indent {
+
+.indent {
   margin-left: 0.28in; }
-#layout2 p,
-#layout2 li {
+
+p,
+li {
   font-size: 0.154in;
   margin: 0; }
-#layout2 h5 {
+
+h5 {
   font-size: .3in;
   font-weight: 550; }
-#layout2 .one-third.column h5 {
+
+.one-third.column h5 {
   color: #888; }
-#layout2 .header {
+
+.header {
   font-size: 0.126in;
   font-weight: 600;
   letter-spacing: .1rem;
   text-transform: uppercase; }
-#layout2 h4 {
+
+h4 {
   color: #888;
   letter-spacing: .01in; }
-#layout2 .section {
+
+.section {
   font-size: 0.196in;
   font-weight: 600;
   letter-spacing: .1rem;
-  text-transform: uppercase;
-  color: #444; }
-#layout2 .progress {
+  text-transform: uppercase; }
+
+.progress {
   background-color: #aaa;
   display: inline-block;
   position: relative;
   height: 0.168in;
   margin: 0.014in 0; }
-#layout2 .strength {
+
+.strength {
   float: left;
   width: 45%;
   overflow: hidden;
   clear: left;
   text-overflow: ellipsis;
   white-space: nowrap; }
-#layout2 .language {
+
+.language {
   font-size: 0.126in;
   font-weight: 600;
   letter-spacing: .1rem;
@@ -54,27 +63,33 @@
   border-radius: 50%;
   margin: 0.07in auto;
   text-align: center;
-  padding: 0.518in 0.07in;
+  padding: 0.49in 0.07in;
   width: 1.4in; }
-#layout2 .Native {
+
+.Native {
   color: black;
   border: 0.07in solid black; }
-#layout2 .Fluent {
+
+.Fluent {
   color: #333;
   border: 0.07in solid #333; }
-#layout2 .Business {
+
+.Business {
   color: #666;
   border: 0.07in solid #666; }
-#layout2 li {
+
+li {
   font-size: 0.168in;
   margin: 0 0 0 0.28in; }
-#layout2 h4,
-#layout2 h5,
-#layout2 h6 {
+
+h4,
+h5,
+h6 {
   margin: 0 auto; }
-#layout2 .experience,
-#layout2 .school,
-#layout2 .other {
+
+.experience,
+.school,
+.other {
   margin: 0 0 0 0.14in; }
 
 /*# sourceMappingURL=layout2.css.map */
