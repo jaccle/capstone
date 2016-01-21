@@ -2,41 +2,12 @@ angular.module("capstone")
 
 .controller("FirstController", ['$scope', 'DummyFormData', function($scope, DummyFormData) {
 
-    $scope.models = {
-        selected: null,
-        templates: DummyFormData.templates(),
-        dropzones: {
-            "heading": [{
-                "type": "h1",
-                "name": "Title1",
-                "id": "Build your own",
-                'model': 'name'
-            },{
-                "type": "item",
-                "name": "Item",
-                "id": "We're all drag and drop! Get more over there <<<<<<",
-                'model': 'example'
-            },{
-                "type": "h5",
-                "name": "Title5",
-                "id": "Click on us to edit text!",
-                'model': 'name'
-            }],
-            "Waitlist": [{
-                "type": "item",
-                "id": "I'm set aside",
-                'model': ''
-            }]
-        }
-    };
+    $scope.models = DummyFormData.model();
 
     $scope.$watch('models.dropzones', function(model) {
         $scope.modelAsJson = angular.toJson(model, true);
     }, true);
-
-}])
-
-.controller("SecondController", ['$scope', 'DummyFormData', function($scope, DummyFormData) {
+    //////////////////////////////////////////////////////////////////////////////////////
     $scope.name = DummyFormData.name();
     $scope.strengths = DummyFormData.strengths();
     $scope.address = DummyFormData.address();
@@ -47,6 +18,7 @@ angular.module("capstone")
     $scope.contacts = DummyFormData.contacts();
     $scope.otherSide = DummyFormData.otherSide();
     $scope.otherMain = DummyFormData.otherMain();
+    $scope.layout = DummyFormData.layout();
 
     $scope.addExp = function() {
         $scope.experience.push({
@@ -112,6 +84,15 @@ angular.module("capstone")
     $scope.remove = function(what, i) {
         what.splice(i, 1);
         console.log(what);
+    };
+
+    $scope.print = function(num) {
+        var printContents = document.getElementById('demo').innerHTML;
+        var popupWin = window.open('', '_blank');
+        popupWin.document.open();
+        popupWin.document.write('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" type="text/css" href="./layouts/layout'+num+'.css" /><link rel="stylesheet" href="./print/print.css"></head><body onload="window.print()">' + printContents + '</html>');
+        console.log('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" href="./basic.css"><link rel="stylesheet" type="text/css" href="./layouts/layout'+num+'.css" /></head><body onload="window.print()"></html>');
+        popupWin.document.close();
     };
 
 

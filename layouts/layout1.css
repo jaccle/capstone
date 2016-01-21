@@ -1,4 +1,7 @@
-.toggle {
+/***************************** Print *****************************/
+
+.layout2,
+.layout3 {
     display: none;
 }
 
@@ -42,7 +45,7 @@ ul[dnd-list] > li {
 
 .dropzone li {
     background-color: #fff;
-    border: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
     display: block;
     padding: 0px;
 }
@@ -118,7 +121,7 @@ ul[dnd-list] > li {
 .Waitlist {
     background-color: #eee;
     display: block;
-    margin: auto;
+    margin: 10px auto;
     width: 115px
 }
 
@@ -144,7 +147,7 @@ ul[dnd-list] > li {
     color: #3c763d;
     background-color: #dff0d8;
     background-image: linear-gradient(to bottom, #dff0d8 0, #d0e9c6 100%);
-    border-color: #d6e9c6;
+    /*border-color: #d6e9c6;*/
 }
 
 

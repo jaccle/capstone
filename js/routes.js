@@ -4,7 +4,7 @@ app.config(function($routeProvider) {
   $routeProvider
     .when('/layout1', {
       templateUrl: 'layouts/layout1.html',
-      controller: 'FirstController',
+      // controller: 'FirstController',
       css: 'layouts/layout1.css'
     })
     .when('/layout2', {

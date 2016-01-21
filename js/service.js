@@ -1,5 +1,7 @@
 angular.module("capstone").factory('DummyFormData', function () {
-    var templates = [
+    var model = {
+        selected: null,
+        templates: [
             {'type': "item", "name": "Item", 'id': "Item"},
             {'type': "container", "name": "2 Columns", 'id': 'Container', 'columns': [[], []]},
             {'type': "h1", "name": "Title 1", 'id': "Title"},
@@ -10,6 +12,31 @@ angular.module("capstone").factory('DummyFormData', function () {
             {'type': "h6", "name": "Title 6", 'id': "Title"},
             {'type': "bullet",  "name": "Bullet", 'id': "point"}
         ],
+        dropzones: {
+            "heading": [{
+                "type": "h1",
+                "name": "Title1",
+                "id": "Build your own",
+                'model': 'name'
+            },{
+                "type": "item",
+                "name": "Item",
+                "id": "We're all drag and drop! Get more over there <<<<<<",
+                'model': 'example'
+            },{
+                "type": "h5",
+                "name": "Title5",
+                "id": "Click on us to edit text!",
+                'model': 'name'
+            }],
+            "Waitlist": [{
+                "type": "item",
+                "id": "I'm set aside",
+                'model': ''
+            }]
+        }
+    },
+    layout = 'layout1',
     name = "Full Name",
     address = {
         street: '11 Sweet St.',
@@ -73,8 +100,11 @@ angular.module("capstone").factory('DummyFormData', function () {
     languages = [{language: 'English', proficiency: 'Native'}, {language: 'Pig Latin', proficiency: 'Business'}],
     objective = "Get job at super duper cool company that values the important stuff and I can show off my skills";
     return {
-        templates: function () {
-            return templates;
+        model: function () {
+            return model;
+        },
+        layout: function () {
+            return layout;
         },
         name: function () {
             return name;

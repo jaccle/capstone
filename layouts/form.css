@@ -1,7 +1,109 @@
-select {
-	width: 140px;
-}
+@charset "UTF-8";
+input {
+  border: none;
+  border-bottom: 1px solid #757575;
+  color: #aaa;
+  display: block;
+  font-size: 15px;
+  padding: 10px 10px 10px 5px;
+  width: 300px; }
 
-.icon {
-	width: 150%;
-}
+#form {
+  margin: 0.3in;
+  /* Removes awkward default styles on some inputs for iOS */
+  /* Lists
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */ }
+  #form label {
+    display: inline-block; }
+  #form button {
+    height: 0.3in;
+    padding: 0 0.2in;
+    font-size: 0.09in;
+    font-weight: 600;
+    line-height: 0.3in; }
+  #form .education,
+  #form .xp,
+  #form .other {
+    padding: 0.1in; }
+  #form .education:nth-child(even),
+  #form .xp:nth-child(even),
+  #form .other:nth-child(even) {
+    background-color: #eee; }
+  #form input[type="email"],
+  #form input[type="number"],
+  #form input[type="search"],
+  #form input[type="text"],
+  #form input[type="tel"],
+  #form input[type="url"],
+  #form input[type="password"],
+  #form textarea,
+  #form select {
+    height: 38px;
+    padding: 6px 10px;
+    /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box; }
+  #form input[type="email"],
+  #form input[type="number"],
+  #form input[type="search"],
+  #form input[type="text"],
+  #form input[type="tel"],
+  #form input[type="url"],
+  #form input[type="password"],
+  #form textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  #form textarea {
+    min-height: 65px;
+    padding-top: 6px;
+    padding-bottom: 6px; }
+  #form input[type="email"]:focus,
+  #form input[type="number"]:focus,
+  #form input[type="search"]:focus,
+  #form input[type="text"]:focus,
+  #form input[type="tel"]:focus,
+  #form input[type="url"]:focus,
+  #form input[type="password"]:focus,
+  #form textarea:focus,
+  #form select:focus {
+    border: 1px solid #33C3F0;
+    outline: 0; }
+  #form label,
+  #form legend {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600; }
+  #form fieldset {
+    padding: 0;
+    border-width: 0; }
+  #form input[type="checkbox"],
+  #form input[type="radio"] {
+    display: inline; }
+  #form label > .label-body {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: normal; }
+  #form ul {
+    list-style: circle inside; }
+  #form ol {
+    list-style: decimal inside; }
+  #form ol, #form ul {
+    padding-left: 0;
+    margin-top: 0; }
+  #form ul ul,
+  #form ul ol,
+  #form ol ol,
+  #form ol ul {
+    margin: 1.5rem 0 1.5rem 3rem;
+    font-size: 90%; }
+  #form li {
+    margin-bottom: 1rem; }
+  #form h1, #form h2, #form h3, #form h4, #form h5, #form h6, #form p, #form li {
+    color: initial;
+    font-size: initial; }
+
+/*# sourceMappingURL=form.css.map */

@@ -1,0 +1,26 @@
+body {
+  display: block;
+  margin: auto;
+  width: 8.5in;
+  height: 11in;
+  overflow: hidden; }
+  body img {
+    max-height: .15in;
+    max-width: .15in; }
+
+.layout2 .name {
+  font-size: 1.5in; }
+
+.two-thirds.column {
+  width: 3in; }
+
+.one-third.column {
+  width: 2.5in; }
+
+.first {
+  margin-right: .5in; }
+
+.one.column {
+  width: .15in; }
+
+/*# sourceMappingURL=print.css.map */

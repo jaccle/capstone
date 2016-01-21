@@ -1,74 +1,80 @@
-.name {
+/***************************** Print *****************************/
+.layout1,
+.layout3 {
+  display: none; }
+
+#layout2 .name {
   font-size: 150px;
+  margin: 0;
   text-align: center; }
-
-p {
-  font-size: 12px;
+#layout2 .indent {
+  margin-left: 0.28in; }
+#layout2 p,
+#layout2 li {
+  font-size: 0.154in;
   margin: 0; }
-
-.header {
-  font-size: 11px;
+#layout2 h5 {
+  font-size: .3in;
+  font-weight: 550; }
+#layout2 .one-third.column h5 {
+  color: #888; }
+#layout2 .header {
+  font-size: 0.126in;
   font-weight: 600;
   letter-spacing: .1rem;
   text-transform: uppercase; }
-
-.section {
-  font-size: 20px;
+#layout2 h4 {
+  color: #888;
+  letter-spacing: .01in; }
+#layout2 .section {
+  font-size: 0.196in;
   font-weight: 600;
   letter-spacing: .1rem;
-  text-transform: uppercase; }
-
-.progress {
+  text-transform: uppercase;
+  color: #444; }
+#layout2 .progress {
   background-color: #aaa;
   display: inline-block;
   position: relative;
-  height: 12px;
-  margin: 1px 0; }
-
-.strength {
+  height: 0.168in;
+  margin: 0.014in 0; }
+#layout2 .strength {
   float: left;
   width: 45%;
   overflow: hidden;
   clear: left;
   text-overflow: ellipsis;
   white-space: nowrap; }
-
-.language {
-  font-size: 11px;
+#layout2 .language {
+  font-size: 0.126in;
   font-weight: 600;
   letter-spacing: .1rem;
   text-transform: uppercase;
   display: block;
   border-radius: 50%;
-  margin: 5px auto;
+  margin: 0.07in auto;
   text-align: center;
-  padding: 35px 5px;
-  width: 100px; }
-
-.Native {
+  padding: 0.518in 0.07in;
+  width: 1.4in; }
+#layout2 .Native {
   color: black;
-  border: 5px solid black; }
-
-.Fluent {
+  border: 0.07in solid black; }
+#layout2 .Fluent {
   color: #333;
-  border: 5px solid #333; }
-
-.Business {
+  border: 0.07in solid #333; }
+#layout2 .Business {
   color: #666;
-  border: 5px solid #666; }
-
-li {
-  font-size: 12px;
-  margin: 0 0 0 20px; }
-
-h4,
-h5,
-h6 {
+  border: 0.07in solid #666; }
+#layout2 li {
+  font-size: 0.168in;
+  margin: 0 0 0 0.28in; }
+#layout2 h4,
+#layout2 h5,
+#layout2 h6 {
   margin: 0 auto; }
-
-.experience,
-.school,
-.other {
-  margin: 0 0 0 10px; }
+#layout2 .experience,
+#layout2 .school,
+#layout2 .other {
+  margin: 0 0 0 0.14in; }
 
 /*# sourceMappingURL=layout2.css.map */

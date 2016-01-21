@@ -1,4 +1,9 @@
+/***************************** Print *****************************/
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+.layout2,
+.layout1 {
+  display: none; }
+
 .demo {
   padding-right: 1.5in;
   padding-left: 1.2in; }

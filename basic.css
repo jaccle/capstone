@@ -1,56 +1,42 @@
-.demo {
+#demo {
   display: block;
   margin: auto;
-  border: 2px solid #ddd;
-  padding: .8in;
+  border: 0.02in solid #ddd;
+  padding: .6in 1in;
   width: 8.5in;
   height: 11in;
   overflow: hidden; }
+  #demo img {
+    max-height: .2in;
+    max-width: .2in;
+    margin: 0;
+    padding: 0; }
 
 .wrapper {
   position: absolute;
-  margin: 50px 170px;
+  margin: 0.5in 1.7in;
   width: 8.5in; }
-
-.form {
-  margin: 30px; }
-  .form label {
-    display: inline-block; }
-  .form button {
-    height: 30px;
-    padding: 0 20px;
-    font-size: 9px;
-    font-weight: 600;
-    line-height: 30px; }
-  .form .education,
-  .form .xp,
-  .form .other {
-    padding: 10px; }
-  .form .education:nth-child(even),
-  .form .xp:nth-child(even),
-  .form .other:nth-child(even) {
-    background-color: #eee; }
 
 /***************************** Sidebar *****************************/
 .btn-info {
-  margin: 10px auto 10px; }
+  margin: 0.1in auto 0.1in; }
 
 .choices {
   margin: 0; }
 
 .sidebar {
   background-color: #ddd;
-  margin-top: 50px;
+  margin-top: 0.5in;
   text-align: center; }
 
 .options {
-  border-right: 2px solid #555;
+  border-right: 0.02in solid #555;
   position: fixed;
   margin: 0;
   bottom: 0;
   top: 0;
   left: 0;
-  width: 150px;
+  width: 1.5in;
   overflow: scroll; }
   .options li button {
     background-color: #fefefe;
@@ -58,16 +44,16 @@
 
 .layouts {
   right: 0;
-  border-left: 2px solid #555;
-  border-top: 2px solid #555;
-  border-bottom: 2px solid #555;
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
-  padding: 5px 0;
+  border-left: 0.02in solid #555;
+  border-top: 0.02in solid #555;
+  border-bottom: 0.02in solid #555;
+  border-bottom-left-radius: 0.08in;
+  border-top-left-radius: 0.08in;
+  padding: 0.05in 0;
   position: fixed;
-  width: 140px; }
+  width: 1.4in; }
   .layouts a {
-    margin: 5px 10px;
+    margin: 0.05in 0.1in;
     padding: 0;
     border-radius: 0;
     border: 0 solid #eee; }
@@ -81,9 +67,5 @@
   width: 90%; }
 
 /*********PRINT*********/
-@media print {
-  * {
-    background-color: white;
-    border: 0; } }
 
 /*# sourceMappingURL=basic.css.map */

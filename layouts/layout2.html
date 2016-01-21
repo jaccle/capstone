@@ -1,20 +1,20 @@
-<div class="demo">
-  <div class="row">
+<div id="demo">
+  <div class="row" id="layout2">
     <h1 class="name">{{name}}</h1>
   </div>
   <div class="row">
-    <div class="one-third column">
+    <div class="one-third column first">
       <div class="objective">
-        <h5 ng-hide="objective === ''">Objective</h5>
+        <h5 ng-if="objective !== ''">Objective</h5>
         <p>{{objective}}</p>
       </div>
       <div class="strengths">
-        <h5 ng-hide="strengths.length === 0">Strengths</h5>
+        <h5 ng-if="strengths.length !== 0">Strengths</h5>
         <div ng-repeat="s in strengths" class="header clear row"><span class="strength">{{s.name + ' '}}</span> <span class="progress" style="padding-left: {{s.amount/2}}%">
         </span></div>
       </div>
       <div class="row">
-        <h5 ng-hide="strengths.length === 0">Languages</h5>
+        <h5 ng-if="strengths.length !== 0">Languages</h5>
         <div class="row" ng-repeat="l in languages">
           <div class="language {{l.proficiency}}">
             {{l.language}}
@@ -23,40 +23,40 @@
         </div>
       </div>
       <div ng-repeat="o in otherSide">
-        <h4 ng-show="o.name !== ''">{{o.name}}</h4>
-        <h5 ng-show="o.title !== ''">{{o.title}}</h5>
-        <h6 ng-show="o.text !== ''">{{o.text}}</h6>
+        <h4 ng-if="o.name !== ''">{{o.name}}</h4>
+        <h5 ng-if="o.title !== ''">{{o.title}}</h5>
+        <h6 ng-if="o.text !== ''">{{o.text}}</h6>
         <ul>
-          <li ng-hide="o.bullets[$index] === ''" ng-repeat="b in o.bullets">{{b}}</li>
+          <li ng-if="o.bullets[$index] !== ''" ng-repeat="b in o.bullets">{{b}}</li>
         </ul>
       </div>
       <div class="contact">
         <h5>Contact</h5>
         <div class="row">
-          <div ng-show="icon" class="one column">
+          <div ng-if="icon" class="one column">
             <p><img class="icon" src="./layouts/icons/address.png" alt=""></p>
           </div>
-          <div ng-show="icon" class="one column"></div>
+          <div ng-if="icon" class="one column"></div>
           <div class="ten columns">
-            <p ng-show="word">Address:</p>
+            <p ng-if="word">Address:</p>
             <p>{{address.street}}</p>
             <p>{{address.city}}, {{address.state}} {{address.zip}}</p>
           </div>
         </div>
         <div class="row" ng-hide="contacts.length === 0" ng-repeat="c in contacts">
-          <div ng-show="icon" class="one column">
-            <p ng-show="c['show'+$index]"><img class="icon" src="./layouts/icons/{{c.type}}.png" alt=""></p>
+          <div ng-if="icon" class="one column">
+            <p ng-if="c['show'+$index]"><img class="icon" src="./layouts/icons/{{c.type}}.png" alt=""></p>
           </div>
           <div class="one column"></div>
           <div class="ten columns">
-            <p ng-show="c['show'+$index]"><span ng-show="word">{{c.type}}: </span>{{c.text}}</p>
+            <p ng-if="c['show'+$index]"><span ng-if="word">{{c.type}}: </span>{{c.text}}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="two-thirds column">
       <div class="row">
-        <h4 ng-hide="experience.length === 0">Experience</h4>
+        <h4 ng-if="experience.length !== 0">Experience</h4>
         <div class="experience" ng-repeat="e in experience track by $index" ng-hide="experience.length === 0">
           <h5 class="company section">{{e.name}}</h5>
           <h6 class="title"><span ng-hide="e.title === ''">{{e.title}}</span><span ng-hide="e.title === '' || e.when === ''"> | </span><span ng-hide="e.when === ''">{{e.when}}</span></h6>
@@ -68,18 +68,20 @@
       <div class="row">
         <h4 ng-hide="school.length === 0">Education</h4>
         <div class="row school" ng-repeat="e in school track by $index" ng-hide="school.length === 0">
-          <h5 class="school section">{{e.name}}</h5>
-          <h6><span ng-hide="e.degree === ''">{{e.degree}}</span><span ng-hide="e.degree === '' || e.major === ''"> in </span><span ng-hide="e.major === ''">{{e.major}}</span></h6>
+          <h6 class="school section">{{e.name}}</h6>
+          <div class="indent">
+            <h6><span ng-hide="e.degree === ''">{{e.degree}}</span><span ng-hide="e.degree === '' || e.major === ''"> in </span><span ng-hide="e.major === ''">{{e.major}}</span></h6>
           <h6 class="header"><span ng-hide="e.when === ''">Graduated: {{e.when}}</span><span ng-hide="e.when === '' || e.gpa === ''"> | </span><span ng-hide="e.gpa === ''">GPA: {{e.gpa}}</span></h6>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="other" ng-repeat="o in otherMain">
-          <h4 ng-show="o.name !== ''">{{o.name}}</h4>
-          <h5 ng-show="o.title !== ''">{{o.title}}</h5>
-          <h6 ng-show="o.text !== ''">{{o.text}}</h6>
+          <h4 ng-if="o.name !== ''">{{o.name}}</h4>
+          <h5 ng-if="o.title !== ''">{{o.title}}</h5>
+          <h6 ng-if="o.text !== ''">{{o.text}}</h6>
           <ul>
-            <li ng-hide="o.bullets[$index] === ''" ng-repeat="b in o.bullets">{{b}}</li>
+            <li ng-if="o.bullets[$index] !== ''" ng-repeat="b in o.bullets">{{b}}</li>
           </ul>
         </div>
       </div>

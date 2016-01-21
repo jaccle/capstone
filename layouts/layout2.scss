@@ -1,34 +1,62 @@
-@mixin uppercase ($size:11px) {
+/***************************** Print *****************************/
+
+.layout1,
+.layout3 {
+    display: none;
+}
+
+@mixin uppercase ($size:9 * .014in) {
     font-size: $size;
     font-weight: 600;
     letter-spacing: .1rem;
     text-transform: uppercase;
 }
 
-.name {
+#layout2 {
+    .name {
     font-size: 150px;
+    margin: 0;
     text-align: center;
 }
 
-p {
-    font-size: 12px;
+.indent {
+    margin-left: 20 * .014in;
+}
+
+p,
+li {
+    font-size: 11 * .014in;
     margin: 0;
+}
+
+h5 {
+    font-size: .3in;
+    font-weight: 550;
+}
+.one-third.column h5 {
+
+    color: #888;
 }
 
 .header {
     @include uppercase;
 }
+h4 {
+    color: #888;
+    letter-spacing: .01in;
+}
 
 .section {
-	@include uppercase(20px)
+    @include uppercase(14 * .014in);
+    color: #444;
 }
 
 .progress {
     background-color: #aaa;
     display: inline-block;
     position: relative;
-    height: 12px;
-    margin: 1px 0;
+    height: 12 * .014in;
+    margin: 1 * .014in 0;
 }
 
 .strength {
@@ -42,17 +70,17 @@ p {
 
 @mixin circle ($color) {
     color: $color;
-    border: 5px solid $color;
+    border: 5 * .014in solid $color;
 }
 
 .language {
     @include uppercase;
     display: block;
     border-radius: 50%;
-    margin: 5px auto;
+    margin: 5 * .014in auto;
     text-align: center;
-    padding: 35px 5px;
-    width: 100px;
+    padding: 37 * .014in 5 * .014in;
+    width: 100 * .014in;
 }
 
 .Native {
@@ -68,8 +96,8 @@ p {
 }
 
 li {
-    font-size: 12px;
-    margin: 0 0 0 20px;
+    font-size: 12 * .014in;
+    margin: 0 0 0 20 * .014in;
 }
 
 h4,
@@ -81,5 +109,6 @@ h6 {
 .experience,
 .school,
 .other {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 10 * .014in;
+}
 }

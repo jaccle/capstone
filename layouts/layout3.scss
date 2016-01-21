@@ -1,3 +1,10 @@
+/***************************** Print *****************************/
+
+.layout2,
+.layout1 {
+    display: none;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 @mixin uppercase ($size:13px) {
     font-size: $size;
