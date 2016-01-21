@@ -1,0 +1,65 @@
+body {
+    display: block;
+    margin: auto;
+    width: 8.5in;
+    height: 11in;
+    overflow: hidden;
+    img {
+        max-height: .2in;
+        max-width: .2in;
+    }
+}
+
+#layout2 {
+    li,
+    td h6 {
+        font-size: 12 * .014in;
+        margin: 0 0 0 20 * .014in;
+    }
+    .name {
+        font-size: 1.5in;
+    }
+}
+
+#layout3 {
+    padding-right: 1.5in;
+    padding-left: 1.2in;
+    .name {
+        font-size: 1.5in;
+    }
+    * p, * li {
+        font-size: .2in;
+    }
+}
+
+.two-thirds.column {
+    width: 4in;
+    * {
+        width: 4in;
+    }
+}
+
+.one-third.column {
+    width: 2.7in;
+}
+
+.first {
+    margin-right: .5in;
+}
+
+.second {
+    position: fixed;
+    right: -3in;
+}
+
+.contacts {
+    .one.column {
+        display: inline-block;
+        width: 10%;
+    }
+    .ten.columns {
+        display: inline-block;
+        margin-right: .5in;
+        width: 80%;
+    }
+}

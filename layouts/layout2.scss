@@ -32,14 +32,15 @@ h5 {
     font-size: .3in;
     font-weight: 550;
 }
-.one-third.column h5 {
 
+.one-third.column h5 {
     color: #888;
 }
 
 .header {
     @include uppercase;
 }
+
 h4 {
     color: #888;
     letter-spacing: .01in;
@@ -93,15 +94,29 @@ h4 {
     @include circle(#666);
 }
 
-li {
-    font-size: 12 * .014in;
+li, td h6 {
+    font-size: 11 * .014in;
     margin: 0 0 0 20 * .014in;
+}
+td h6 {
+    line-height: .2in;
+}
+
+td h6 img { 
+  vertical-align: middle;
 }
 
 h4,
 h5,
 h6 {
     margin: 0 auto;
+}
+
+
+
+table * {
+    padding: .01in;
+    margin:0 .02in;
 }
 
 .experience,

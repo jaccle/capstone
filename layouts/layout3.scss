@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
 /***************************** Print *****************************/
 
 .layout2,
@@ -5,39 +7,40 @@
     display: none;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
-@mixin uppercase ($size:13px) {
+@mixin uppercase ($size:13*.011in) {
     font-size: $size;
     font-weight: 600;
     letter-spacing: .1rem;
     text-transform: uppercase;
 }
 
-.demo {
+#demo {
     padding-right: 1.5in;
     padding-left: 1.2in;
-    * {
+}
+
+#layout3 * {
     font-family: 'Oswald', sans-serif;
 }
-}
+
 //////////////////////////////////////////////////////////////
 .one-third {
     background-color: #ddd;
-    padding: 10px;
+    padding: 10*.011in;
     .ribbon {
-        /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+        /* This ribbon is based on a 16*.011in font side and a 24*.011in vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
         // width: 50%;
         position: relative;
         background: #aaa; //#ba89b6;
         color: #fff;
         text-align: center;
-        padding: .5em 2em;
+        // padding: .5em 2em;
         /* Adjust to suit */
-        margin: 1em -33px .5em;
-        /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+        margin: 1em -33*.011in .5em;
+        /* Based on 24*.011in vertical rhythm. 48*.011in bottom margin - normally 24 but the ribbon 'graphics' take up 24*.011in themselves so we double it. */
     }
     .first {
-        margin-top: -10px;
+        margin-top: -10*.011in;
     }
     .ribbon .ribbon-content:before,
     .ribbon .ribbon-content:after {
@@ -59,13 +62,20 @@
 }
 
 .name {
-    font-size: 90px;
+    font-size: 90*.011in;
+}
+
+.school h5,
+.experience h5 {
+    padding: 0;
+    margin: 0;
+    font-size: .25in;
 }
 
 p,
 h6,
 li {
-    font-size: 18px;
+    font-size: 18*.011in;
     margin: 0;
 }
 
@@ -74,15 +84,15 @@ li {
 }
 
 .section {
-    @include uppercase(20px)
+    @include uppercase(20*.011in)
 }
 
 .progress {
     background-color: #aaa;
     display: inline-block;
     position: relative;
-    height: 14px;
-    margin: 2px 0;
+    height: 14*.011in;
+    margin: 2*.011in 0;
 }
 
 .strength {
@@ -92,22 +102,27 @@ li {
     clear: left;
     text-overflow: ellipsis;
     white-space: nowrap;
-    height: 20px;
+    height: 20*.011in;
 }
 
 @mixin circle ($color) {
     color: $color;
-    border: 5px solid $color;
+    border: 5*.011in solid $color;
 }
 
 .language {
     @include uppercase;
     display: block;
     border-radius: 50%;
-    margin: 5px auto;
+    margin: 5*.011in auto;
     text-align: center;
-    padding: 35px 5px;
-    width: 100px;
+    padding: 35*.011in 5*.011in;
+    width: 100*.011in;
+}
+
+table * {
+    padding: .01in;
+    margin: 0 .02in;
 }
 
 .Native {
@@ -122,26 +137,47 @@ li {
     @include circle(#666);
 }
 
-li {
-    font-size: 12px;
-    margin: 0 0 0 20px;
+li,
+p {
+    font-size: 12*.011in;
+    margin: 0 0 0 20*.011in;
 }
+
 .indent {
-    margin-left: 20px;
-    margin-bottom: 10px;
+    margin-left: 20*.011in;
+    margin-bottom: 10*.011in;
 }
+
+h4 {
+    font-size: .4in;
+    margin: 0 0 0 20 * .014in;
+}
+
+h5 {
+    font-size: .29in;
+    margin: 0 0 0 20 * .014in;
+    padding: .15in;
+    letter-spacing: .01in;
+}
+
 h4,
 h5,
 h6 {
-    font-size: xxl;
     margin: 0 auto;
 }
 
 .experience,
 .school,
 .other {
-    margin: 0 0 0 10px;
+    margin: 0 0 0 10*.011in;
     .bullets {
-        font-size: 14px;
+        font-size: 14*.011in;
     }
 }
+
+@media print {
+    p, li {
+        font-size: 15*.011in;
+    }
+}
+

@@ -13,7 +13,7 @@
         <div ng-repeat="s in strengths" class="header clear row"><span class="strength">{{s.name + ' '}}</span> <span class="progress" style="padding-left: {{s.amount/2}}%">
         </span></div>
       </div>
-      <div class="row">
+      <div class="row languages">
         <h5 ng-if="strengths.length !== 0">Languages</h5>
         <div class="row" ng-repeat="l in languages">
           <div class="language {{l.proficiency}}">
@@ -32,26 +32,18 @@
       </div>
       <div class="contact">
         <h5>Contact</h5>
-        <div class="row">
-          <div ng-if="icon" class="one column">
-            <p><img class="icon" src="./layouts/icons/address.png" alt=""></p>
-          </div>
-          <div ng-if="icon" class="one column"></div>
-          <div class="ten columns">
-            <p ng-if="word">Address:</p>
-            <p>{{address.street}}</p>
-            <p>{{address.city}}, {{address.state}} {{address.zip}}</p>
-          </div>
-        </div>
-        <div class="row" ng-hide="contacts.length === 0" ng-repeat="c in contacts">
-          <div ng-if="icon" class="one column">
-            <p ng-if="c['show'+$index]"><img class="icon" src="./layouts/icons/{{c.type}}.png" alt=""></p>
-          </div>
-          <div class="one column"></div>
-          <div class="ten columns">
-            <p ng-if="c['show'+$index]"><span ng-if="word">{{c.type}}: </span>{{c.text}}</p>
-          </div>
-        </div>
+        <table class="contacts row">
+          <tr>
+            <td><h6><img class="icon" src="./layouts/icons/address.png" alt=""></h6></td>
+            <td><h6 ng-if="word">Address:</h6>
+            <h6>{{address.street}}</h6>
+            <h6>{{address.city}}, {{address.state}} {{address.zip}}</h6></td>
+          </tr>
+          <tr ng-repeat="c in contacts">
+            <td><h6 ng-if="c['show'+$index]"><img class="icon" src="./layouts/icons/{{c.type}}.png" alt=""></h6></td>
+            <td><h6 ng-if="c['show'+$index]"><span ng-if="word">{{c.type}}: </span>{{c.text}}</h6></td>
+          </tr>
+        </table>
       </div>
     </div>
     <div class="two-thirds column">

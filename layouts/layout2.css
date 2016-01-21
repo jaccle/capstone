@@ -78,14 +78,24 @@ h4 {
   color: #666;
   border: 0.07in solid #666; }
 
-li {
-  font-size: 0.168in;
+li, td h6 {
+  font-size: 0.154in;
   margin: 0 0 0 0.28in; }
+
+td h6 {
+  line-height: .2in; }
+
+td h6 img {
+  vertical-align: middle; }
 
 h4,
 h5,
 h6 {
   margin: 0 auto; }
+
+table * {
+  padding: .01in;
+  margin: 0 .02in; }
 
 .experience,
 .school,

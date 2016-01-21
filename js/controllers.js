@@ -91,7 +91,6 @@ angular.module("capstone")
         var popupWin = window.open('', '_blank');
         popupWin.document.open();
         popupWin.document.write('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" type="text/css" href="./layouts/layout'+num+'.css" /><link rel="stylesheet" href="./print/print.css"></head><body onload="window.print()">' + printContents + '</html>');
-        console.log('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" href="./basic.css"><link rel="stylesheet" type="text/css" href="./layouts/layout'+num+'.css" /></head><body onload="window.print()"></html>');
         popupWin.document.close();
     };
 
