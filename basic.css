@@ -12,10 +12,80 @@
     margin: 0;
     padding: 0; }
 
+.themeButton0 {
+  margin-top: 10px; }
+
+.themeButton1 span:first-child {
+  background-color: #67c2af; }
+
+.themeButton1 span:nth-child(2) {
+  background-color: #fcae2b; }
+
+.themeButton1 span:nth-child(3) {
+  background-color: #ef77ab; }
+
+.themeButton1 span:nth-child(4) {
+  background-color: #a0b1dd; }
+
+.themeButton1 span:last-child {
+  background-color: #8c836a; }
+
+.themeButton2 span:first-child {
+  background-color: #C34D59; }
+
+.themeButton2 span:nth-child(2) {
+  background-color: #B0D756; }
+
+.themeButton2 span:nth-child(3) {
+  background-color: #FE6A6A; }
+
+.themeButton2 span:nth-child(4) {
+  background-color: #4ECBC3; }
+
+.themeButton2 span:last-child {
+  background-color: #54606E; }
+
+.themeButton3 span:first-child {
+  background-color: #FE9900; }
+
+.themeButton3 span:nth-child(2) {
+  background-color: #774E89; }
+
+.themeButton3 span:nth-child(3) {
+  background-color: #2C748C; }
+
+.themeButton3 span:nth-child(4) {
+  background-color: #005763; }
+
+.themeButton3 span:last-child {
+  background-color: #484939; }
+
+.themeButton4 span:first-child {
+  background-color: #C43235; }
+
+.themeButton4 span:nth-child(2) {
+  background-color: #2C748C; }
+
+.themeButton4 span:nth-child(3) {
+  background-color: #610065; }
+
+.themeButton4 span:nth-child(4) {
+  background-color: #333; }
+
+.themeButton4 span:last-child {
+  background-color: #06000A; }
+
 .wrapper {
   position: absolute;
   margin: 0.5in 1.7in;
   width: 8.5in; }
+
+.colors {
+  margin: 0 auto; }
+
+.scheme {
+  padding-left: 20px;
+  height: 20px; }
 
 /***************************** Sidebar *****************************/
 .btn-info {

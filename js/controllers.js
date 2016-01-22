@@ -19,6 +19,7 @@ angular.module("capstone")
     $scope.otherSide = DummyFormData.otherSide();
     $scope.otherMain = DummyFormData.otherMain();
     $scope.layout = DummyFormData.layout();
+    $scope.theme = DummyFormData.theme();
 
     $scope.addExp = function() {
         $scope.experience.push({
@@ -86,11 +87,18 @@ angular.module("capstone")
         console.log(what);
     };
 
+    $scope.themeChange = function(scheme) {
+        $scope.theme = scheme;
+    };
+
     $scope.print = function(num) {
         var printContents = document.getElementById('demo').innerHTML;
         var popupWin = window.open('', '_blank');
         popupWin.document.open();
-        popupWin.document.write('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" type="text/css" href="./layouts/layout'+num+'.css" /><link rel="stylesheet" href="./print/print.css"></head><body onload="window.print()">' + printContents + '</html>');
+        if (theme) {
+            popupWin.document.write('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" type="text/css" href="./layouts/layout'+num+'.css" /><link rel="stylesheet" href="./print/print.css"><link rel="stylesheet" href="./themes/'+theme+'.css"></head><body onload="window.print()">' + printContents + '</html>');
+        } else {popupWin.document.write('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" type="text/css" href="./layouts/layout' + num + '.css" /><link rel="stylesheet" href="./print/print.css"></head><body onload="window.print()">' + printContents + '</html>');
+}
         popupWin.document.close();
     };
 

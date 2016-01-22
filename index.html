@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="capstone">
+<html lang="en" ng-app="capstone" ng-controller="FirstController">
 
 <head>
   <meta charset="UTF-8">
@@ -17,7 +17,8 @@
   <script src="./js/controllers.js"></script>
 </head>
 
-<body ng-controller="FirstController">
+<body>
+  <link rel="stylesheet" type="text/css" ng-href="{{theme || 'default' }}" ng-if="theme !== 'default'">
   <div class="wrapper">
     <div class="toggle">
       <button class="button-primary" ng-click="isFormOpen = !isFormOpen">Edit (Toggle Form)</button>

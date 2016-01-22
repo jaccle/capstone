@@ -1,0 +1,38 @@
+* {
+  color: #8c836a; }
+
+.one-third.column .ribbon {
+  background-color: #f5adcd;
+  color: #fff; }
+  .one-third.column .ribbon .ribbon-content:before,
+  .one-third.column .ribbon .ribbon-content:after {
+    border-color: #ea498f transparent transparent transparent; }
+
+.one-third.column {
+  background-color: #fdd58f; }
+
+.name {
+  color: #67c2af; }
+
+.section {
+  color: #ef77ab; }
+
+.one-third.column h5, h4 {
+  color: #fcae2b; }
+
+.progress {
+  background-color: #67c2af; }
+
+.Native {
+  color: #8c836a;
+  border-color: #a0b1dd; }
+
+.Fluent {
+  color: #8c836a;
+  border-color: #fcae2b; }
+
+.Business {
+  color: #8c836a;
+  border-color: #ef77ab; }
+
+/*# sourceMappingURL=theme1.css.map */

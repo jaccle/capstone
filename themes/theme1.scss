@@ -1,0 +1,54 @@
+$first: darken(#9ED8CC, 15%);
+$second: darken(#FDCB76, 15%);
+$third: darken(#F7BBD5, 15%);
+$fourth: darken(#D8DFF1, 15%);
+$rest: darken(#b9b3a3, 20%);
+
+* {
+	color: $rest;
+}
+
+.one-third.column .ribbon {
+        background-color: lighten($third, 12%); //#ba89b6;
+        color: #fff;
+    .ribbon-content:before,
+	.ribbon-content:after {
+    border-color: darken($third, 10%) transparent transparent transparent;
+    }
+    }
+.one-third.column {
+	background-color: lighten($second, 20%);
+}
+
+.name {
+	color: $first;
+}
+
+.section {
+	color: $third;
+}
+
+.one-third.column h5, h4 {
+	color: $second;
+}
+
+@mixin circle ($color) {
+    color: $rest;
+    border-color: $color;
+}
+
+.progress {
+	background-color: $first;
+}
+
+.Native {
+    @include circle($fourth);
+}
+
+.Fluent {
+    @include circle($second);
+}
+
+.Business {
+    @include circle($third);
+}

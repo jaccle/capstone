@@ -1,0 +1,60 @@
+$first: #C34D59;
+$second: #B0D756;
+$fourth: #4ECBC3;
+$third: #FE6A6A;
+$rest: #54606E;
+
+.themeButton2 {
+	span:first-child {
+		background-color: $first;
+	}
+	span:nth-child(2) {
+		background-color: $second;
+	}
+	span:nth-child(3) {
+		background-color: $third;
+	}
+	span:nth-child(4) {
+		background-color: $fourth;
+	}
+	span:last-child {
+		background-color: $rest;
+	}
+}
+
+* {
+	color: $rest;
+}
+
+.name {
+	color: $first;
+}
+
+.section {
+	color: $third;
+}
+
+.one-third.column h5, h4 {
+	color: $second;
+}
+
+@mixin circle ($color) {
+    color: $color;
+    border-color: $color;
+}
+
+.progress {
+	background-color: $first;
+}
+
+.Native {
+    @include circle($fourth);
+}
+
+.Fluent {
+    @include circle($second);
+}
+
+.Business {
+    @include circle($third);
+}

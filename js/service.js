@@ -98,7 +98,8 @@ angular.module("capstone").factory('DummyFormData', function () {
         }],
     strengths = [{name: 'Strength', amount: 50},{name: 'Respect', amount: 99},{name: 'Mad Skills', amount: 70},{name: 'Lorem', amount: 45},{name: 'Ipsum', amount: 80}],
     languages = [{language: 'English', proficiency: 'Native'}, {language: 'Pig Latin', proficiency: 'Business'}],
-    objective = "Get job at super duper cool company that values the important stuff and I can show off my skills";
+    objective = "Get job at super duper cool company that values the important stuff and I can show off my skills",
+    theme = 'default';
     return {
         model: function () {
             return model;
@@ -135,6 +136,9 @@ angular.module("capstone").factory('DummyFormData', function () {
         },
         otherMain: function () {
             return otherMain;
+        },
+        theme: function () {
+            return theme;
         }
     };
 });

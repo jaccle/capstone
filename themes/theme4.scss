@@ -1,8 +1,10 @@
-$first: #FE9900;
-$second: #774E89;
-$third: #2C748C;
-$fourth: #005763;
-$rest: #484939;
+$first: #C43235;
+$second: #2C748C;
+$third: lighten( #300032, 10% );
+$fourth: #333;
+$rest: #06000A;
+
+
 
 * {
 	color: $rest;
@@ -21,7 +23,7 @@ $rest: #484939;
 }
 
 .one-third.column h5, h4 {
-	color: $fourth;
+	color: $third;
 }
 
 @mixin circle ($color) {
@@ -34,7 +36,7 @@ $rest: #484939;
 }
 
 .Native {
-    @include circle($fourth);
+    @include circle($first);
 }
 
 .Fluent {
@@ -44,3 +46,10 @@ $rest: #484939;
 .Business {
     @include circle($third);
 }
+
+// tr:nth-child(even){
+// 	background-color: $first;
+// }
+// tr:nth-child(odd){
+// 	background-color: $second;
+// }

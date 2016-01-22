@@ -1,0 +1,31 @@
+* {
+  color: #06000A; }
+
+.name {
+  color: #C43235; }
+
+.section {
+  color: #610065; }
+
+.experience h6 span {
+  color: #C43235; }
+
+.one-third.column h5, h4 {
+  color: #610065; }
+
+.progress {
+  background-color: #2C748C; }
+
+.Native {
+  color: #C43235;
+  border-color: #C43235; }
+
+.Fluent {
+  color: #2C748C;
+  border-color: #2C748C; }
+
+.Business {
+  color: #610065;
+  border-color: #610065; }
+
+/*# sourceMappingURL=theme4.css.map */
