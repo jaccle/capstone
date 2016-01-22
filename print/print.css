@@ -8,8 +8,21 @@ body {
     max-height: .2in;
     max-width: .2in; }
 
-.layout2 .name {
+#layout2 li,
+#layout2 td h6 {
+  font-size: 0.168in;
+  margin: 0 0 0 0.28in; }
+#layout2 .name {
   font-size: 1.5in; }
+
+#layout3 {
+  padding-right: 1.5in;
+  padding-left: 1.2in; }
+  #layout3 .category {
+    font-size: 1.96in;
+    margin: 0 0 0 0.28in; }
+  #layout3 .name {
+    font-size: 1.5in; }
 
 .two-thirds.column {
   width: 4in; }
@@ -21,10 +34,6 @@ body {
 
 .first {
   margin-right: .5in; }
-
-li, td h6 {
-  font-size: 0.168in;
-  margin: 0 0 0 0.28in; }
 
 .second {
   position: fixed;
