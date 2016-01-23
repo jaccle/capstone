@@ -2,7 +2,8 @@ body {
   display: block;
   margin: auto;
   width: 8.5in;
-  height: 11in; }
+  height: 11in;
+  overflow: hidden; }
   body img {
     max-height: .2in;
     max-width: .2in; }
@@ -15,24 +16,26 @@ body {
   font-size: 1.5in; }
 
 #layout3 {
-  padding-right: 1.5in;
-  padding-left: 1.2in; }
-  #layout3 .category {
-    font-size: 1.96in;
-    margin: 0 0 0 0.28in; }
+  padding-right: 1.2in; }
+  #layout3 .objective p {
+    font-size: .18in; }
+  #layout3 .objective .ribbon {
+    width: 2.99in; }
   #layout3 .name {
-    font-size: 1.5in; }
+    font-size: 1in; }
 
 .two-thirds.column {
-  width: 4in; }
+  width: 4in;
+  left: 0; }
   .two-thirds.column * {
     width: 4in; }
 
 .one-third.column {
-  width: 2.7in; }
+  width: 2.7in;
+  left: 5.1in; }
 
-.first h5 {
-  margin-right: .01in; }
+.first {
+  margin-right: .5in; }
 
 .second {
   position: fixed;

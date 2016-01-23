@@ -3,6 +3,7 @@ body {
     margin: auto;
     width: 8.5in;
     height: 11in;
+    overflow: hidden;
     img {
         max-height: .2in;
         max-width: .2in;
@@ -21,19 +22,23 @@ body {
 }
 
 #layout3 {
-    padding-right: 1.5in;
-    padding-left: 1.2in;
-    .category {
-        font-size: 140 * .014in;
-        margin: 0 0 0 20 * .014in;
+    padding-right: 1.2in;
+    .objective {
+        p {
+            font-size: .18in;
+        }
+        .ribbon {
+            width: 2.99in;
+        }
     }
     .name {
-        font-size: 1.5in;
+        font-size: 1in;
     }
 }
 
 .two-thirds.column {
     width: 4in;
+    left: 0;
     * {
         width: 4in;
     }
@@ -41,10 +46,11 @@ body {
 
 .one-third.column {
     width: 2.7in;
+    left: 5.1in;
 }
 
-.first h5{
-    margin-right: .01in;
+.first {
+    margin-right: .5in;
 }
 
 .second {
