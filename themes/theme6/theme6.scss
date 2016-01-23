@@ -1,0 +1,56 @@
+$first: #59323C;
+$second: #866450;
+$third: #BFAF80;
+$fourth: #F2EEB3;
+$rest: #260126;
+
+* {
+    color: $rest;
+}
+
+#layout3 {
+    .one-third.column .ribbon {
+        background-color: lighten($third, 12%); //#ba89b6;
+        color: #fff;
+    .ribbon-content:before,
+    .ribbon-content:after {
+    border-color: darken($third, 10%) transparent transparent transparent;
+    }
+    }
+.one-third.column {
+    background-color: lighten($fourth, 9%);
+}
+}
+
+.name {
+    color: $first;
+}
+
+.section {
+    color: $third;
+}
+
+.one-third.column h5, h4 {
+    color: $second;
+}
+
+@mixin circle ($color) {
+    color: $rest;
+    border-color: $color;
+}
+
+.progress {
+    background-color: $third;
+}
+
+.Native {
+    @include circle($fourth);
+}
+
+.Fluent {
+    @include circle($second);
+}
+
+.Business {
+    @include circle($third);
+}

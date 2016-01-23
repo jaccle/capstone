@@ -177,14 +177,12 @@
     <div ng-view></div>
   </div>
   <div class="layouts sidebar">
-    <a ng-click="layout = layout1" href="#layout1" class="button">
+    <a ng-click="layoutChange('layout1')" href="#layout1" class="button">
       <button>Custom</button>
     </a>
-    <a ng-click="layout = layout2" href="#layout2" class="button"><img src="./layout2.png" alt=""></a>
-    <a ng-click="layout = layout3" href="#layout3" class="button"><img src="./layout3.png" alt=""></a>
-    <button ng-click="print(1, theme)" class="layout1">Print/Save</button>
-    <button ng-click="print(2, theme)" class="layout2">Print/Save</button>
-    <button ng-click="print(3, theme)" class="layout3">Print/Save</button>
+    <a ng-click="layoutChange('layout2')" href="#layout2" class="button"><img src="./layout2.png" alt=""></a>
+    <a ng-click="layoutChange('layout3')" href="#layout3" class="button"><img src="./layout3.png" alt=""></a>
+    <button ng-click="print(layout, theme)">Print/Save</button>
   </div>
 </body>
 
