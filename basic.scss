@@ -1,6 +1,6 @@
 #demo {
     display: block;
-    margin: auto;
+    // margin-left: 12%;
     border: 2*.01in solid #ddd;
     padding: .6in 1in;
     width: 8.5in;
@@ -19,84 +19,160 @@
 }
 
 .themeButton1 span:first-child {
-  background-color: #67c2af; }
+    background-color: #67c2af;
+}
+
 .themeButton1 span:nth-child(2) {
-  background-color: #fcae2b; }
+    background-color: #fcae2b;
+}
+
 .themeButton1 span:nth-child(3) {
-  background-color: #ef77ab; }
+    background-color: #ef77ab;
+}
+
 .themeButton1 span:nth-child(4) {
-  background-color: #a0b1dd; }
+    background-color: #a0b1dd;
+}
+
 .themeButton1 span:last-child {
-  background-color: #8c836a; }
+    background-color: #8c836a;
+}
 
 .themeButton2 span:first-child {
-  background-color: #C34D59; }
+    background-color: #C34D59;
+}
+
 .themeButton2 span:nth-child(2) {
-  background-color: #B0D756; }
+    background-color: #B0D756;
+}
+
 .themeButton2 span:nth-child(3) {
-  background-color: #FE6A6A; }
+    background-color: #FE6A6A;
+}
+
 .themeButton2 span:nth-child(4) {
-  background-color: #4ECBC3; }
+    background-color: #4ECBC3;
+}
+
 .themeButton2 span:last-child {
-  background-color: #54606E; }
+    background-color: #54606E;
+}
 
 .themeButton3 span:first-child {
-  background-color: #FE9900; }
+    background-color: #FE9900;
+}
+
 .themeButton3 span:nth-child(2) {
-  background-color: #774E89; }
+    background-color: #774E89;
+}
+
 .themeButton3 span:nth-child(3) {
-  background-color: #2C748C; }
+    background-color: #2C748C;
+}
+
 .themeButton3 span:nth-child(4) {
-  background-color: #005763; }
+    background-color: #005763;
+}
+
 .themeButton3 span:last-child {
-  background-color: #484939; }
+    background-color: #484939;
+}
 
 .themeButton4 span:first-child {
-  background-color: #C43235; }
+    background-color: #C43235;
+}
+
 .themeButton4 span:nth-child(2) {
-  background-color: #2C748C; }
+    background-color: #2C748C;
+}
+
 .themeButton4 span:nth-child(3) {
-  background-color: #610065; }
+    background-color: #610065;
+}
+
 .themeButton4 span:nth-child(4) {
-  background-color: #333; }
+    background-color: #333;
+}
+
 .themeButton4 span:last-child {
-  background-color: #06000A; }
+    background-color: #06000A;
+}
 
-  .themeButton5 span:first-child {
-  background-color: #2C748C; }
+.themeButton5 span:first-child {
+    background-color: #2C748C;
+}
+
 .themeButton5 span:nth-child(2) {
-  background-color: #7DBCA9; }
+    background-color: #7DBCA9;
+}
+
 .themeButton5 span:nth-child(3) {
-  background-color: #FFD37C; }
+    background-color: #FFD37C;
+}
+
 .themeButton5 span:nth-child(4) {
-  background-color: #EAFD89; }
+    background-color: #EAFD89;
+}
+
 .themeButton5 span:last-child {
-  background-color: #5F5C3B; }
+    background-color: #5F5C3B;
+}
 
-   .themeButton6 span:first-child {
-  background-color: #59323C; }
+.themeButton6 span:first-child {
+    background-color: #59323C;
+}
+
 .themeButton6 span:nth-child(2) {
-  background-color: #866450; }
-.themeButton6 span:nth-child(3) {
-  background-color: #BFAF80; }
-.themeButton6 span:nth-child(4) {
-  background-color: #F2EEB3; }
-.themeButton6 span:last-child {
-  background-color: #260126; }
+    background-color: #866450;
+}
 
+.themeButton6 span:nth-child(3) {
+    background-color: #BFAF80;
+}
+
+.themeButton6 span:nth-child(4) {
+    background-color: #F2EEB3;
+}
+
+.themeButton6 span:last-child {
+    background-color: #260126;
+}
 
 .wrapper {
-    position: absolute;
-    margin: 50*.01in 170*.01in;
+    margin-left: 12%;
     width: 8.5in;
 }
+.toggle {
+  margin-top: 5px;
+}
+@media screen and (min-width: 2500px) {
+  #form, .toggle {
+    float:right;
+    margin-right: 15%;
+    width: 40%;
+  }
+  #form, #demo {
+    display: inline-block;
+  }
+  .wrapper {
+    margin-top: 2%;
+    width: 90%;
+  }
+}
+
 .colors {
-    margin: 0 auto;
+    margin: 0;
+    width: 100%;
 }
+.themes button {
+    padding: 0 15px;
+  }
+
 .scheme {
-    padding-left: 20px;
-    height: 20px;
+    padding-left: 20%;
+    height: 25px;
 }
+
 
 /***************************** Sidebar *****************************/
 
@@ -109,38 +185,34 @@
 }
 
 $sideborder: 2*.01in solid #555;
-$corner: 8*.01in;
 .sidebar {
     background-color: #ddd;
-    margin-top: 50*.01in;
+    margin-top: 50px;
     text-align: center;
-}
-
-.options {
     border-right: $sideborder;
     position: fixed;
     margin: 0;
     bottom: 0;
     top: 0;
+    min-width: 150px;
+    width: 9%;
+    overflow-x: scroll;
+}
+
+.options {
     left: 0;
-    width: 150*.01in;
-    overflow: scroll;
     li button {
         background-color: #fefefe;
         margin: 0;
+    }
+    button {
+      width: 90%;
     }
 }
 
 .layouts {
     right: 0;
     border-left: $sideborder;
-    border-top: $sideborder;
-    border-bottom: $sideborder;
-    border-bottom-left-radius: $corner;
-    border-top-left-radius: $corner;
-    padding: 5*.01in 0;
-    position: fixed;
-    width: 140*.01in;
     a {
         margin: 5*.01in 10*.01in;
         padding: 0;
@@ -159,7 +231,3 @@ $corner: 8*.01in;
 .u-most-width {
     width: 80%;
 }
-
-
-/*********PRINT*********/
-

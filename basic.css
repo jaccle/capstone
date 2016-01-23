@@ -1,6 +1,5 @@
 #demo {
   display: block;
-  margin: auto;
   border: 0.02in solid #ddd;
   padding: .6in 1in;
   width: 8.5in;
@@ -106,16 +105,34 @@
   background-color: #260126; }
 
 .wrapper {
-  position: absolute;
-  margin: 0.5in 1.7in;
+  margin-left: 12%;
   width: 8.5in; }
 
+.toggle {
+  margin-top: 5px; }
+
+@media screen and (min-width: 2500px) {
+  #form, .toggle {
+    float: right;
+    margin-right: 15%;
+    width: 40%; }
+
+  #form, #demo {
+    display: inline-block; }
+
+  .wrapper {
+    margin-top: 2%;
+    width: 90%; } }
 .colors {
-  margin: 0 auto; }
+  margin: 0;
+  width: 100%; }
+
+.themes button {
+  padding: 0 15px; }
 
 .scheme {
-  padding-left: 20px;
-  height: 20px; }
+  padding-left: 20%;
+  height: 25px; }
 
 /***************************** Sidebar *****************************/
 .btn-info {
@@ -126,32 +143,28 @@
 
 .sidebar {
   background-color: #ddd;
-  margin-top: 0.5in;
-  text-align: center; }
-
-.options {
+  margin-top: 50px;
+  text-align: center;
   border-right: 0.02in solid #555;
   position: fixed;
   margin: 0;
   bottom: 0;
   top: 0;
-  left: 0;
-  width: 1.5in;
-  overflow: scroll; }
+  min-width: 150px;
+  width: 9%;
+  overflow-x: scroll; }
+
+.options {
+  left: 0; }
   .options li button {
     background-color: #fefefe;
     margin: 0; }
+  .options button {
+    width: 90%; }
 
 .layouts {
   right: 0;
-  border-left: 0.02in solid #555;
-  border-top: 0.02in solid #555;
-  border-bottom: 0.02in solid #555;
-  border-bottom-left-radius: 0.08in;
-  border-top-left-radius: 0.08in;
-  padding: 0.05in 0;
-  position: fixed;
-  width: 1.4in; }
+  border-left: 0.02in solid #555; }
   .layouts a {
     margin: 0.05in 0.1in;
     padding: 0;
@@ -165,7 +178,5 @@
 
 .u-most-width {
   width: 80%; }
-
-/*********PRINT*********/
 
 /*# sourceMappingURL=basic.css.map */

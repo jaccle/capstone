@@ -84,8 +84,8 @@
         <div class="row">
           <label>Strength</label>
           <button ng-click="addStrength()">+</button>
-          <h6 ng-repeat="strength in strengths"><input type="text" ng-model="strength.name" maxlength="11"><input type="number" name="input" ng-model="strength.amount"
-           min="0" max="100">/100 <button ng-click="remove(strengths, $index)">X</button></h6>
+          <div ng-repeat="strength in strengths"><input type="text" ng-model="strength.name" maxlength="11"><input type="number" name="input" ng-model="strength.amount"
+           min="0" max="100">/100 <button ng-click="remove(strengths, $index)">X</button></div>
         </div>
         <div class="row">
           <label for="languages">Languages</label>
