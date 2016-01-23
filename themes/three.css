@@ -1,13 +1,13 @@
 * {
   color: #484939; }
 
-.layout3 .one-third.column .ribbon {
+#layout3 .one-third.column .ribbon {
   background-color: #3b9bbb;
   color: #fff; }
-  .layout3 .one-third.column .ribbon .ribbon-content:before,
-  .layout3 .one-third.column .ribbon .ribbon-content:after {
+  #layout3 .one-third.column .ribbon .ribbon-content:before,
+  #layout3 .one-third.column .ribbon .ribbon-content:after {
     border-color: #205465 transparent transparent transparent; }
-.layout3 .one-third.column {
+#layout3 .one-third.column {
   background-color: #a984b9; }
 
 .name {
@@ -19,7 +19,8 @@
 .experience h6 span {
   color: #FE9900; }
 
-.one-third.column h5, h4 {
+.one-third.column h5,
+h4 {
   color: #005763; }
 
 .progress {

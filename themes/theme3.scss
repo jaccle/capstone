@@ -3,37 +3,39 @@ $second: #774E89;
 $third: #2C748C;
 $fourth: #005763;
 $rest: #484939;
-
 * {
-	color: $rest;
+    color: $rest;
 }
+
 #layout3 {
     .one-third.column .ribbon {
-        background-color: lighten($third, 12%); //#ba89b6;
+        background-color: lighten($third, 12%);
         color: #fff;
-    .ribbon-content:before,
-    .ribbon-content:after {
-    border-color: darken($third, 10%) transparent transparent transparent;
+        .ribbon-content:before,
+        .ribbon-content:after {
+            border-color: darken($third, 10%) transparent transparent transparent;
+        }
     }
+    .one-third.column {
+        background-color: lighten($second, 20%);
     }
-.one-third.column {
-    background-color: lighten($second, 20%);
 }
-}
+
 .name {
-	color: $first;
+    color: $first;
 }
 
 .section {
-	color: $third;
+    color: $third;
 }
 
 .experience h6 span {
-	color: $first;
+    color: $first;
 }
 
-.one-third.column h5, h4 {
-	color: $fourth;
+.one-third.column h5,
+h4 {
+    color: $fourth;
 }
 
 @mixin circle ($color) {
@@ -42,7 +44,7 @@ $rest: #484939;
 }
 
 .progress {
-	background-color: $second;
+    background-color: $second;
 }
 
 .Native {
