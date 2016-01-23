@@ -2,8 +2,7 @@ body {
   display: block;
   margin: auto;
   width: 8.5in;
-  height: 11in;
-  overflow: hidden; }
+  height: 11in; }
   body img {
     max-height: .2in;
     max-width: .2in; }
@@ -32,8 +31,8 @@ body {
 .one-third.column {
   width: 2.7in; }
 
-.first {
-  margin-right: .5in; }
+.first h5 {
+  margin-right: .01in; }
 
 .second {
   position: fixed;

@@ -8,16 +8,18 @@ $rest: darken(#b9b3a3, 20%);
 	color: $rest;
 }
 
-.one-third.column .ribbon {
+#layout3 {
+    .one-third.column .ribbon {
         background-color: lighten($third, 12%); //#ba89b6;
         color: #fff;
     .ribbon-content:before,
-	.ribbon-content:after {
+    .ribbon-content:after {
     border-color: darken($third, 10%) transparent transparent transparent;
     }
     }
 .one-third.column {
-	background-color: lighten($second, 20%);
+    background-color: lighten($second, 20%);
+}
 }
 
 .name {

@@ -1,16 +1,14 @@
-.themeButton2 span:first-child {
-  background-color: #C34D59; }
-.themeButton2 span:nth-child(2) {
-  background-color: #B0D756; }
-.themeButton2 span:nth-child(3) {
-  background-color: #FE6A6A; }
-.themeButton2 span:nth-child(4) {
-  background-color: #4ECBC3; }
-.themeButton2 span:last-child {
-  background-color: #54606E; }
-
 * {
   color: #54606E; }
+
+#layout3 .one-third.column .ribbon {
+  background-color: #7dd9d3;
+  color: #fff; }
+  #layout3 .one-third.column .ribbon .ribbon-content:before,
+  #layout3 .one-third.column .ribbon .ribbon-content:after {
+    border-color: #34b2aa transparent transparent transparent; }
+#layout3 .one-third.column {
+  background-color: #d7eba8; }
 
 .name {
   color: #C34D59; }

@@ -1,6 +1,15 @@
 * {
   color: #54606E; }
 
+#layout3 .one-third.column .ribbon {
+  background-color: #7dd9d3;
+  color: #fff; }
+  #layout3 .one-third.column .ribbon .ribbon-content:before,
+  #layout3 .one-third.column .ribbon .ribbon-content:after {
+    border-color: #34b2aa transparent transparent transparent; }
+#layout3 .one-third.column {
+  background-color: #d7eba8; }
+
 .name {
   color: #C34D59; }
 

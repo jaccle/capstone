@@ -1,0 +1,37 @@
+* {
+  color: #5F5C3B; }
+
+#layout3 .one-third.column .ribbon {
+  background-color: #FFD37C;
+  color: #fff; }
+  #layout3 .one-third.column .ribbon .ribbon-content:before,
+  #layout3 .one-third.column .ribbon .ribbon-content:after {
+    border-color: #ffc249 transparent transparent transparent; }
+#layout3 .one-third.column {
+  background-color: #c0dfd6; }
+
+.name {
+  color: #FFD37C; }
+
+.section {
+  color: #7DBCA9; }
+
+.one-third.column h5, h4 {
+  color: #FF9B6D; }
+
+.progress {
+  background-color: #EAFD89; }
+
+.Native {
+  color: #5F5C3B;
+  border-color: #FF9B6D; }
+
+.Fluent {
+  color: #5F5C3B;
+  border-color: #7DBCA9; }
+
+.Business {
+  color: #5F5C3B;
+  border-color: #EAFD89; }
+
+/*# sourceMappingURL=theme5.css.map */

@@ -10,6 +10,23 @@ $rest: #06000A;
 	color: $rest;
 }
 
+#layout3 {
+	.one-third.column .ribbon {
+        background-color: $third; //#ba89b6;
+        color: #fff;
+    .ribbon-content:before,
+	.ribbon-content:after {
+    border-color: darken($third, 10%) transparent transparent transparent;
+    }
+    }
+.one-third.column {
+	background-color: $rest;
+	h5, p, li, span, div, h6 {
+		color: white;
+	}
+}
+}
+
 .name {
 	color: $first;
 }

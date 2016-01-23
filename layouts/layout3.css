@@ -13,32 +13,37 @@
 
 .one-third {
   background-color: #ddd;
-  padding: 0.09in; }
-  .one-third .ribbon {
-    /* This ribbon is based on a 16*.011in font side and a 24*.011in vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
-    position: relative;
-    background: #aaa;
-    color: #fff;
-    text-align: center;
-    /* Adjust to suit */
-    margin: 1em -0.363in 0.5em;
-    /* Based on 24*.011in vertical rhythm. 48*.011in bottom margin - normally 24 but the ribbon 'graphics' take up 24*.011in themselves so we double it. */ }
-  .one-third .first {
-    margin-top: -0.11in; }
-  .one-third .ribbon .ribbon-content:before,
-  .one-third .ribbon .ribbon-content:after {
-    content: "";
-    position: absolute;
-    display: block;
-    border-style: solid;
-    border-color: #807080 transparent transparent transparent;
-    bottom: -1em; }
-  .one-third .ribbon .ribbon-content:before {
-    left: 0;
-    border-width: 1em 0 0 1em; }
-  .one-third .ribbon .ribbon-content:after {
-    right: 0;
-    border-width: 1em 1em 0 0; }
+  padding: .08in; }
+
+.ribbon {
+  /* This ribbon is based on a 16*.011in font side and a 24*.011in vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  position: relative;
+  background: #aaa;
+  color: #fff;
+  text-align: center;
+  /* Adjust to suit */
+  margin: 1em -0.363in 0.5em;
+  /* Based on 24*.011in vertical rhythm. 48*.011in bottom margin - normally 24 but the ribbon 'graphics' take up 24*.011in themselves so we double it. */ }
+
+.first {
+  margin-top: -0.11in; }
+
+.ribbon .ribbon-content:before,
+.ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #807080 transparent transparent transparent;
+  bottom: -1em; }
+
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em; }
+
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0; }
 
 .name {
   font-size: 0.99in; }

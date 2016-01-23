@@ -1,6 +1,17 @@
 * {
   color: #06000A; }
 
+#layout3 .one-third.column .ribbon {
+  background-color: #610065;
+  color: #fff; }
+  #layout3 .one-third.column .ribbon .ribbon-content:before,
+  #layout3 .one-third.column .ribbon .ribbon-content:after {
+    border-color: #300032 transparent transparent transparent; }
+#layout3 .one-third.column {
+  background-color: #06000A; }
+  #layout3 .one-third.column h5, #layout3 .one-third.column p, #layout3 .one-third.column li, #layout3 .one-third.column span, #layout3 .one-third.column div, #layout3 .one-third.column h6 {
+    color: white; }
+
 .name {
   color: #C43235; }
 

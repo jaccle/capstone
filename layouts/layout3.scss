@@ -26,7 +26,8 @@
 //////////////////////////////////////////////////////////////
 .one-third {
     background-color: #ddd;
-    padding: 10*.009in;
+    padding: .08in;
+}
     .ribbon {
         /* This ribbon is based on a 16*.011in font side and a 24*.011in vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
         // width: 50%;
@@ -59,7 +60,6 @@
         right: 0;
         border-width: 1em 1em 0 0;
     }
-}
 
 .name {
     font-size: 90*.011in;

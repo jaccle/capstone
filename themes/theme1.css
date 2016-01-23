@@ -1,14 +1,13 @@
 * {
   color: #8c836a; }
 
-.one-third.column .ribbon {
+#layout3 .one-third.column .ribbon {
   background-color: #f5adcd;
   color: #fff; }
-  .one-third.column .ribbon .ribbon-content:before,
-  .one-third.column .ribbon .ribbon-content:after {
+  #layout3 .one-third.column .ribbon .ribbon-content:before,
+  #layout3 .one-third.column .ribbon .ribbon-content:after {
     border-color: #ea498f transparent transparent transparent; }
-
-.one-third.column {
+#layout3 .one-third.column {
   background-color: #fdd58f; }
 
 .name {

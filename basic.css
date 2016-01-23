@@ -75,6 +75,21 @@
 .themeButton4 span:last-child {
   background-color: #06000A; }
 
+.themeButton5 span:first-child {
+  background-color: #2C748C; }
+
+.themeButton5 span:nth-child(2) {
+  background-color: #7DBCA9; }
+
+.themeButton5 span:nth-child(3) {
+  background-color: #FFD37C; }
+
+.themeButton5 span:nth-child(4) {
+  background-color: #EAFD89; }
+
+.themeButton5 span:last-child {
+  background-color: #5F5C3B; }
+
 .wrapper {
   position: absolute;
   margin: 0.5in 1.7in;

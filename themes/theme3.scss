@@ -7,7 +7,19 @@ $rest: #484939;
 * {
 	color: $rest;
 }
-
+#layout3 {
+    .one-third.column .ribbon {
+        background-color: lighten($third, 12%); //#ba89b6;
+        color: #fff;
+    .ribbon-content:before,
+    .ribbon-content:after {
+    border-color: darken($third, 10%) transparent transparent transparent;
+    }
+    }
+.one-third.column {
+    background-color: lighten($second, 20%);
+}
+}
 .name {
 	color: $first;
 }

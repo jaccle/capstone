@@ -1,0 +1,56 @@
+$first: #FFD37C;
+$second: #FF9B6D;
+$third: #7DBCA9;
+$fourth: #EAFD89;
+$rest: #5F5C3B;
+
+* {
+	color: $rest;
+}
+
+#layout3 {
+    .one-third.column .ribbon {
+        background-color: $first; //#ba89b6;
+        color: #fff;
+    .ribbon-content:before,
+    .ribbon-content:after {
+    border-color: darken($first, 10%) transparent transparent transparent;
+    }
+    }
+.one-third.column {
+    background-color: lighten($third, 20%);
+}
+}
+
+.name {
+	color: $first;
+}
+
+.section {
+	color: $third;
+}
+
+.one-third.column h5, h4 {
+	color: $second;
+}
+
+@mixin circle ($color) {
+    color: $rest;
+    border-color: $color;
+}
+
+.progress {
+	background-color: $fourth;
+}
+
+.Native {
+    @include circle($second);
+}
+
+.Fluent {
+    @include circle($third);
+}
+
+.Business {
+    @include circle($fourth);
+}
