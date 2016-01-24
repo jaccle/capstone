@@ -1,8 +1,10 @@
 $first: #FE9900;
 $second: #774E89;
 $third: #2C748C;
-$fourth: #005763;
+$fourth: #00a065;
 $rest: #484939;
+
+
 * {
     color: $rest;
 }
@@ -57,4 +59,23 @@ h4 {
 
 .Business {
     @include circle($third);
+}
+
+.squares {
+    * {
+        border-color: $rest !important;
+        color: $rest !important;
+    }
+    &.first {
+        background-color: $first;
+    }
+    &.second {
+        background-color: $second;
+    }
+    &.third {
+        background-color: $third;
+    }
+    &.fourth {
+        background-color: $fourth;
+    }
 }

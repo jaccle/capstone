@@ -2,36 +2,37 @@ $first: darken(#9ED8CC, 15%);
 $second: darken(#FDCB76, 15%);
 $third: darken(#F7BBD5, 15%);
 $fourth: darken(#D8DFF1, 15%);
-$rest: darken(#b9b3a3, 20%);
-
+$rest: #7c745d;
 * {
-	color: $rest;
+    color: $rest;
 }
+
 
 #layout3 {
     .one-third.column .ribbon {
         background-color: lighten($third, 12%); //#ba89b6;
         color: #fff;
-    .ribbon-content:before,
-    .ribbon-content:after {
-    border-color: darken($third, 10%) transparent transparent transparent;
+        .ribbon-content:before,
+        .ribbon-content:after {
+            border-color: darken($third, 10%) transparent transparent transparent;
+        }
     }
+    .one-third.column {
+        background-color: lighten($second, 20%);
     }
-.one-third.column {
-    background-color: lighten($second, 20%);
-}
 }
 
 .name {
-	color: $first;
+    color: $first;
 }
 
 .section {
-	color: $third;
+    color: $third;
 }
 
-.one-third.column h5, h4 {
-	color: $second;
+.one-third.column h5,
+h4 {
+    color: $second;
 }
 
 @mixin circle ($color) {
@@ -40,7 +41,7 @@ $rest: darken(#b9b3a3, 20%);
 }
 
 .progress {
-	background-color: $first;
+    background-color: $first;
 }
 
 .Native {
@@ -53,4 +54,26 @@ $rest: darken(#b9b3a3, 20%);
 
 .Business {
     @include circle($third);
+}
+
+.squares {
+    * {
+        border-color: $rest !important;
+        color: $rest !important;
+    }
+    &.first {
+        background-color: $first;
+    }
+    &.second {
+        background-color: $second;
+    }
+    &.third {
+        background-color: $third;
+    }
+    &.fourth {
+        background-color: $fourth;
+    }
+    .progress {
+        background-color: $rest;
+    }
 }

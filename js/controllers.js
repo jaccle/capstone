@@ -99,8 +99,12 @@ angular.module("capstone")
     $scope.print = function(layout, theme) {
         var printContents = document.getElementById('demo').innerHTML;
         var popupWin = window.open('', '_blank');
-        popupWin.document.open();
+            popupWin.document.open();
+        if (layout === 'layout4') {
+            popupWin.document.write('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" type="text/css" href="layouts/'+layout+'/'+layout+'.css" /><link rel="stylesheet" href="./print/print4.css"><link rel="stylesheet" href='+theme+'></head><body onload="window.print()">' + printContents + '</html>');
+        } else {
             popupWin.document.write('<html><head><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/normalize.css"><link rel="stylesheet" href="./bower_components/Skeleton-2.0.4/css/skeleton.css"><link rel="stylesheet" type="text/css" href="layouts/'+layout+'/'+layout+'.css" /><link rel="stylesheet" href="./print/print.css"><link rel="stylesheet" href='+theme+'></head><body onload="window.print()">' + printContents + '</html>');
+        }
         popupWin.document.close();
     };
 

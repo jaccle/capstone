@@ -34,4 +34,16 @@
   color: #5F5C3B;
   border-color: #EAFD89; }
 
+.squares * {
+  border-color: #5F5C3B !important;
+  color: #5F5C3B !important; }
+.squares.first {
+  background-color: #FFD37C; }
+.squares.second {
+  background-color: #FF9B6D; }
+.squares.third {
+  background-color: #7DBCA9; }
+.squares.fourth {
+  background-color: #EAFD89; }
+
 /*# sourceMappingURL=theme5.css.map */

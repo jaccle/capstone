@@ -4,6 +4,7 @@ $third: #7DBCA9;
 $fourth: #EAFD89;
 $rest: #5F5C3B;
 
+
 * {
 	color: $rest;
 }
@@ -53,4 +54,23 @@ $rest: #5F5C3B;
 
 .Business {
     @include circle($fourth);
+}
+
+.squares {
+    * {
+        border-color: $rest !important;
+        color: $rest !important;
+    }
+    &.first {
+        background-color: $first;
+    }
+    &.second {
+        background-color: $second;
+    }
+    &.third {
+        background-color: $third;
+    }
+    &.fourth {
+        background-color: $fourth;
+    }
 }

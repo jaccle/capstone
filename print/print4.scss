@@ -1,0 +1,89 @@
+.name {
+    font-size: 1in;
+}
+    img {
+        max-height: .15in;
+        max-width: .15in;
+    }
+
+.one-third.column {
+    margin: 0;
+    width: 1.5in;
+}
+
+.two-thirds.column {
+    margin: 0;
+    width: 2.45in;
+}
+
+.third.column {
+    margin: 0;
+    width: 1.9in;
+    h6 {
+        font-size: 12 * .01in;
+    }
+    img {
+        max-height: .2in;
+        max-width: .2in;
+    }
+}
+
+p,
+li {
+    font-size: 11 * .01in;
+    margin: 0;
+}
+
+li,
+td h6 {
+    font-size: 11 * .01in;
+    margin: 0 0 0 20 * .01in;
+}
+
+td h6 {
+    line-height: .2in;
+    margin: 0;
+    padding: 0;
+    img {
+        vertical-align: middle;
+    }
+}
+table {
+    margin: auto;
+    * {
+        padding: 0;
+        margin: .05in;
+    }
+}
+
+h5 {
+    font-size: .17in;
+}
+
+
+.strength {
+    font-size: .13in;
+    letter-spacing: -.01in;
+}
+
+.language {
+    font-size: .13in;
+    padding: .1in;
+}
+
+h4 {
+    font-size: .23in;
+}
+
+.experience {
+    margin: .05in;
+    padding: .05in;
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+.squares {
+    margin: .02in;
+    padding: .1in;
+}

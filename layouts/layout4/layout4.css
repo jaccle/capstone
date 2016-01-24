@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Spinnaker|Puritan);
+#demo {
+  padding: 1in; }
+  #demo * {
+    font-family: 'Puritan', sans-serif; }
+
+#layout4 {
+  margin: 0;
+  padding: 0; }
+
+.one-third.column {
+  margin: 0;
+  width: 2in; }
+
+.two-thirds.column {
+  margin: 0;
+  width: 3.5in; }
+
+.third.column {
+  margin: 0;
+  width: 3in; }
+
+.name {
+  font-family: 'Spinnaker', sans-serif;
+  font-size: 1.3in;
+  letter-spacing: .02in;
+  text-align: center; }
+
+.progress {
+  background-color: #aaa;
+  background-image: url("3px-tile.png");
+  display: inline-block;
+  position: relative;
+  height: .2in;
+  margin: 0.014in 0; }
+
+.strength {
+  font-color: black;
+  font-family: 'Spinnaker', sans-serif;
+  float: left;
+  width: 45%;
+  overflow: hidden;
+  clear: left;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.font, h4 {
+  font-family: 'Spinnaker', sans-serif;
+  letter-spacing: .015in; }
+
+h4 {
+  text-align: center; }
+
+p,
+li {
+  font-size: 0.154in;
+  margin: 0; }
+
+li,
+td h6 {
+  font-size: 0.154in;
+  margin: 0 0 0 0.28in; }
+
+td h6 {
+  line-height: .2in;
+  margin: 0;
+  padding: 0; }
+  td h6 img {
+    vertical-align: middle; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 auto; }
+
+table {
+  margin: auto; }
+  table * {
+    padding: 0 .05in;
+    margin: .05in; }
+
+.squares {
+  margin: .02in;
+  padding: .2in; }
+
+.font, h4 {
+  font-family: 'Spinnaker', sans-serif; }
+
+.Native,
+.Fluent,
+.Business {
+  display: block;
+  font-family: 'Spinnaker', sans-serif;
+  border: 4px double black;
+  margin: .1in auto;
+  padding: .25in;
+  text-align: center;
+  width: 1in; }
+
+/*# sourceMappingURL=layout4.css.map */

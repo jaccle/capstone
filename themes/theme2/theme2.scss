@@ -5,7 +5,6 @@ $third: #FE6A6A;
 $rest: #54606E;
 
 
-
 * {
 	color: $rest;
 }
@@ -54,4 +53,23 @@ $rest: #54606E;
 
 .Business {
     @include circle($third);
+}
+
+.squares {
+    * {
+        border-color: $rest !important;
+        color: $rest !important;
+    }
+    &.first {
+        background-color: $first;
+    }
+    &.second {
+        background-color: $second;
+    }
+    &.third {
+        background-color: $third;
+    }
+    &.fourth {
+        background-color: $fourth;
+    }
 }

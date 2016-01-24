@@ -21,14 +21,14 @@
 
 .one-third.column h5,
 h4 {
-  color: #005763; }
+  color: #00a065; }
 
 .progress {
   background-color: #774E89; }
 
 .Native {
-  color: #005763;
-  border-color: #005763; }
+  color: #00a065;
+  border-color: #00a065; }
 
 .Fluent {
   color: #774E89;
@@ -37,5 +37,17 @@ h4 {
 .Business {
   color: #2C748C;
   border-color: #2C748C; }
+
+.squares * {
+  border-color: #484939 !important;
+  color: #484939 !important; }
+.squares.first {
+  background-color: #FE9900; }
+.squares.second {
+  background-color: #774E89; }
+.squares.third {
+  background-color: #2C748C; }
+.squares.fourth {
+  background-color: #00a065; }
 
 /*# sourceMappingURL=theme3.css.map */

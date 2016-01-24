@@ -1,0 +1,73 @@
+.name {
+  font-size: 1in; }
+
+img {
+  max-height: .15in;
+  max-width: .15in; }
+
+.one-third.column {
+  margin: 0;
+  width: 1.5in; }
+
+.two-thirds.column {
+  margin: 0;
+  width: 2.45in; }
+
+.third.column {
+  margin: 0;
+  width: 1.9in; }
+  .third.column h6 {
+    font-size: 0.12in; }
+  .third.column img {
+    max-height: .2in;
+    max-width: .2in; }
+
+p,
+li {
+  font-size: 0.11in;
+  margin: 0; }
+
+li,
+td h6 {
+  font-size: 0.11in;
+  margin: 0 0 0 0.2in; }
+
+td h6 {
+  line-height: .2in;
+  margin: 0;
+  padding: 0; }
+  td h6 img {
+    vertical-align: middle; }
+
+table {
+  margin: auto; }
+  table * {
+    padding: 0;
+    margin: .05in; }
+
+h5 {
+  font-size: .17in; }
+
+.strength {
+  font-size: .13in;
+  letter-spacing: -.01in; }
+
+.language {
+  font-size: .13in;
+  padding: .1in; }
+
+h4 {
+  font-size: .23in; }
+
+.experience {
+  margin: .05in;
+  padding: .05in; }
+  .experience ul {
+    margin: 0;
+    padding: 0; }
+
+.squares {
+  margin: .02in;
+  padding: .1in; }
+
+/*# sourceMappingURL=print4.css.map */

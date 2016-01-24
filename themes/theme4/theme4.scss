@@ -1,7 +1,7 @@
 $first: #C43235;
 $second: #2C748C;
 $third: lighten( #300032, 10% );
-$fourth: #333;
+$fourth: #555;
 $rest: #06000A;
 
 
@@ -64,9 +64,22 @@ $rest: #06000A;
     @include circle($third);
 }
 
-// tr:nth-child(even){
-// 	background-color: $first;
-// }
-// tr:nth-child(odd){
-// 	background-color: $second;
-// }
+
+.squares {
+    * {
+        border-color: $rest !important;
+        color: $rest !important;
+    }
+    &.first {
+        background-color: $first;
+    }
+    &.second {
+        background-color: $second;
+    }
+    &.third {
+        background-color: $third;
+    }
+    &.fourth {
+        background-color: $fourth;
+    }
+}
