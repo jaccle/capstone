@@ -1,0 +1,192 @@
+<div ng-if="models.selected" class="box box-grey box-padding" ng-init="layoutChange('layout5')">
+        <h5>Selected</h5>
+        <strong>Type: </strong> {{models.selected.name}}
+        <br>
+        <input type="text" ng-model="models.selected.id" autofocus="true" class="u-full-width" style="margin-top: 5px" />
+      </div>
+<div ng-init="show = false" id="demo">
+<!-- Main area with dropzones and source code -->
+  
+<script type="text/ng-template" id="list.html">
+  <ul dnd-list="list">
+    <li style="list-style: none;" ng-repeat="item in list" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{selected: models.selected === item}" class="{{item.id}}" ng-include="item.type + '.html'">
+    </li>
+  </ul>
+</script>
+<!-- This template is responsible for rendering a container element. It uses the above list template to render each container column -->
+<script type="text/ng-template" id="container.html">
+    <div class="container-element box box-blue row">
+        <div class="six columns" ng-repeat="list in item.columns" ng-include="'list.html'">test</div>
+    </div>
+</script>
+<!-- Template for a normal list item -->
+<script type="text/ng-template" id="name.html">
+  <div class="box item {{item.model}}"><h1 class="name">{{name}}</h1></div>
+</script>
+<!-- Template for a heading -->
+<script type="text/ng-template" id="strengths.html">
+  <div class="box title {{item.model}}"><div class="strengths">
+        <h5 ng-if="strengths.length !== 0">Strengths</h5>
+        <div ng-repeat="s in strengths" class="header clear row"><span class="strength">{{s.name + ' '}}</span> <span class="progress" style="padding-left: {{s.amount/2}}%">
+        </span></div>
+      </div></div>
+</script>
+<!-- Template for a heading -->
+<script type="text/ng-template" id="objective.html">
+  <div class="box title {{item.model}}"><div class="objective">
+        <h5 ng-if="objective !== ''">Objective</h5>
+        <p>{{objective}}</p>
+      </div></div>
+</script>
+<!-- Template for a title -->
+<script type="text/ng-template" id="language.html">
+  <div class="box title {{item.model}}"><div class="row languages">
+        <h5 ng-if="languages.length !== 0">Languages</h5>
+        <div class="row" ng-repeat="l in languages">
+          <div class="language {{l.proficiency}}">
+            {{l.language}}
+            <br> {{l.proficiency}}
+          </div>
+        </div>
+      </div></div>
+</script>
+<!-- Template for a title -->
+<script type="text/ng-template" id="experience.html">
+  <div class="box title {{item.model}}"><div class="row">
+        <h4 ng-if="experience.length !== 0">Experience</h4>
+        <div class="experience" ng-repeat="e in experience track by $index" ng-hide="experience.length === 0">
+          <h5 class="company section">{{e.name}}</h5>
+          <h6 class="title"><span ng-hide="e.title === ''">{{e.title}}</span><span ng-hide="e.title === '' || e.when === ''"> | </span><span ng-hide="e.when === ''">{{e.when}}</span></h6>
+          <ul>
+            <li ng-repeat="r in e.bullets track by $index" ng-hide="r === ''">{{r}}</li>
+          </ul>
+        </div>
+      </div></div>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="education.html">
+  <div class="box title {{item.model}}"><div class="row">
+        <h4 ng-hide="school.length === 0">Education</h4>
+        <div class="row school" ng-repeat="e in school track by $index" ng-hide="school.length === 0">
+          <h6 class="school section">{{e.name}}</h6>
+          <div class="indent">
+            <h6><span ng-hide="e.degree === ''">{{e.degree}}</span><span ng-hide="e.degree === '' || e.major === ''"> in </span><span ng-hide="e.major === ''">{{e.major}}</span></h6>
+          <h6 class="header"><span ng-hide="e.when === ''">Graduated: {{e.when}}</span><span ng-hide="e.when === '' || e.gpa === ''"> | </span><span ng-hide="e.gpa === ''">GPA: {{e.gpa}}</span></h6>
+          </div>
+        </div>
+      </div></div>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="h6.html">
+  <h6 class="box title {{item.model}}">{{item.id}}</h6>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="title.html">
+  <h5 class="box title {{item.model}}">{{item.id}}</h5>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="title.html">
+  <h6 class="box title {{item.model}}">{{item.id}}</h6>
+</script>
+<!-- Template for a bullet -->
+<script type="text/ng-template" id="bullet.html">
+  <div class="bullet {{item.model}}">• {{item.id}}</div>
+</script>
+<div ng-repeat="(zone, list) in models.dropzones" ng-if="!$last">
+  <div class="dropzone {{zone}}">
+    <!-- The dropzone also uses the list template -->
+    <div ng-include="'list.html'"></div>
+  </div>
+</div>
+<div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
+</div>
+</div>
+</div>
+<div>
+
+
+</div>
+  <!-- Sidebar -->
+  <div class="sidebar options">
+    <div class="scroll">
+      
+      <div ng-repeat="(zone, list) in models.dropzones" ng-if="$last" class="col-md-6">
+        <div class="dropzone {{zone}}">
+          <!-- The dropzone also uses the list template -->
+          <h5>{{zone}}</h5>
+          <div class="waiting"></div>
+          <div ng-include="'list.html'" class="waitlist"></div>
+        </div>
+      </div>
+      <div class="toolbox box box-grey box-padding">
+        <h5>New Elements</h5>
+        <ul>
+          <!-- The toolbox only allows to copy objects, not move it. After a new
+                 element was created, dnd-copied is invoked and we generate the next id -->
+          <li style="list-style: none;" class="choices" ng-repeat="item in models.templates" dnd-draggable="item" dnd-effect-allowed="copy" dnd-copied="{{item.id}}">
+            <button type="button" class="button">{{item.name}}</button>
+          </li>
+        </ul>
+      </div>
+      <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
+      <div class="trashcan box box-grey box-padding">
+        <!-- If you use [] as referenced list, the dropped elements will be lost -->
+        <h5>Trashcan</h5>
+        <ul dnd-list="[]">
+          <h1>X</h1>
+        </ul>
+      </div>
+      <div class="themes">
+        <h5>Themes</h5>
+      <button class="themeButton0" ng-click="themeChange(default)">Greyscale</button>
+      <button class="themeButton1" ng-click="themeChange('themes/one.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div></button>
+      <button class="themeButton2" ng-click="themeChange('themes/two.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div></button>
+      <button class="themeButton3" ng-click="themeChange('themes/three.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div></button>
+      <button class="themeButton4" ng-click="themeChange('themes/four.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div></button>
+      <button class="themeButton5" ng-click="themeChange('themes/five.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div></button>
+      <button class="themeButton6" ng-click="themeChange('themes/six.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div></button>
+      </div>
+    </div>
+  </div>
