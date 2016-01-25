@@ -10,6 +10,17 @@ body {
     }
 }
 
+#layout1 {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    .dndLi {
+        list-style-type: none !important;
+        list-style: none !important;
+    }
+    .six.columns {
+        width: 3.4in;
+    }
+}
+
 #layout2 {
     li,
     td h6 {

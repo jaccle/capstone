@@ -1,15 +1,16 @@
-<div ng-if="models.selected" class="box box-grey box-padding">
+  <div ng-if="models.selected" class="box box-grey box-padding">
         <h5>Selected</h5>
         <strong>Type: </strong> {{models.selected.name}}
         <br>
         <input type="text" ng-model="models.selected.id" autofocus="true" class="u-full-width" style="margin-top: 5px" />
       </div>
 <div ng-init="show = false" id="demo">
+<div id="layout1">
 <!-- Main area with dropzones and source code -->
   
 <script type="text/ng-template" id="list.html">
-  <ul dnd-list="list">
-    <li ng-repeat="item in list"
+  <ul class="dndLi" dnd-list="list">
+    <li style="list-style: none;" ng-repeat="item in list"
             dnd-draggable="item"
             dnd-effect-allowed="move"
             dnd-moved="list.splice($index, 1)"
@@ -80,3 +81,4 @@
 
 </div>
   
+</div>
