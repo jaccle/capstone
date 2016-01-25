@@ -42,12 +42,14 @@ h4 {
   border-color: #484939 !important;
   color: #484939 !important; }
 .squares.first {
-  background-color: #FE9900; }
+  background-color: #ffd698; }
 .squares.second {
-  background-color: #774E89; }
+  background-color: #c0a5cb; }
 .squares.third {
-  background-color: #2C748C; }
+  background-color: #7bbfd6; }
 .squares.fourth {
-  background-color: #00a065; }
+  background-color: #3affb6; }
+.squares .progress {
+  background-color: #484939; }
 
 /*# sourceMappingURL=theme3.css.map */

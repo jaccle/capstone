@@ -62,15 +62,18 @@ $rest: #5F5C3B;
         color: $rest !important;
     }
     &.first {
-        background-color: $first;
+        background-color: lighten($first, 10%);
     }
     &.second {
-        background-color: $second;
+        background-color: lighten($second, 10%);
     }
     &.third {
-        background-color: $third;
+        background-color: lighten($third, 10%);
     }
     &.fourth {
-        background-color: $fourth;
+        background-color: lighten($fourth, 10%);
+    }
+    .progress {
+        background-color: $rest;
     }
 }

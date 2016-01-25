@@ -38,12 +38,14 @@
   border-color: #5F5C3B !important;
   color: #5F5C3B !important; }
 .squares.first {
-  background-color: #FFD37C; }
+  background-color: #ffe4af; }
 .squares.second {
-  background-color: #FF9B6D; }
+  background-color: #ffbea0; }
 .squares.third {
-  background-color: #7DBCA9; }
+  background-color: #9fcdbf; }
 .squares.fourth {
-  background-color: #EAFD89; }
+  background-color: #f3febb; }
+.squares .progress {
+  background-color: #5F5C3B; }
 
 /*# sourceMappingURL=theme5.css.map */

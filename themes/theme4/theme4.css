@@ -43,12 +43,14 @@
   border-color: #06000A !important;
   color: #06000A !important; }
 .squares.first {
-  background-color: #C43235; }
+  background-color: #d35154; }
 .squares.second {
-  background-color: #2C748C; }
+  background-color: #3791af; }
 .squares.third {
-  background-color: #610065; }
+  background-color: #8d0093; }
 .squares.fourth {
-  background-color: #555; }
+  background-color: #6c6c6c; }
+.squares .progress {
+  background-color: #06000A; }
 
 /*# sourceMappingURL=theme4.css.map */

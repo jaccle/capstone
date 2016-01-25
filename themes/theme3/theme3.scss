@@ -67,15 +67,18 @@ h4 {
         color: $rest !important;
     }
     &.first {
-        background-color: $first;
+        background-color: lighten($first, 30%);
     }
     &.second {
-        background-color: $second;
+        background-color: lighten($second, 30%);
     }
     &.third {
-        background-color: $third;
+        background-color: lighten($third, 30%);
     }
     &.fourth {
-        background-color: $fourth;
+        background-color: lighten($fourth, 30%);
+    }
+    .progress {
+        background-color: $rest;
     }
 }

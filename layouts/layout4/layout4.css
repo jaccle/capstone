@@ -79,7 +79,7 @@ h6 {
 table {
   margin: auto; }
   table * {
-    padding: 0 .05in;
+    padding: .05in;
     margin: .05in; }
 
 .squares {

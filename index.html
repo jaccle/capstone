@@ -175,6 +175,97 @@
       </form>
     </div>
     <div ng-view></div>
+    <!-- Sidebar -->
+  <div class="sidebar options">
+    <div class="scroll">
+      
+    <div ng-if="layout === 'layout1'">
+      <div ng-repeat="(zone, list) in models.dropzones" ng-if="$last" class="col-md-6">
+        <div class="dropzone {{zone}}">
+          <!-- The dropzone also uses the list template -->
+          <h5>{{zone}}</h5>
+          <div class="waiting"></div>
+          <div ng-include="'list.html'" class="waitlist"></div>
+        </div>
+      </div>
+      <div class="toolbox box box-grey box-padding">
+        <h5>New Elements</h5>
+        <ul>
+          <!-- The toolbox only allows to copy objects, not move it. After a new
+                 element was created, dnd-copied is invoked and we generate the next id -->
+          <li class="choices" ng-repeat="item in models.templates" dnd-draggable="item" dnd-effect-allowed="copy" dnd-copied="{{item.id}}">
+            <button type="button" class="button">{{item.name}}</button>
+          </li>
+        </ul>
+      </div>
+      <div view-source="nested" highlight-lines="{markup: '1-18, 20-28, 40-42, 57-68, 78-82'}"></div>
+      <div class="trashcan box box-grey box-padding">
+        <!-- If you use [] as referenced list, the dropped elements will be lost -->
+        <h5>Trashcan</h5>
+        <ul dnd-list="[]">
+          <h1>X</h1>
+        </ul>
+      </div>
+      </div>
+    <div class="themes">
+    <h5>Themes</h5>
+    <button class="themeButton0" ng-click="themeChange(default)">Greyscale</button>
+    <button class="themeButton1" ng-click="themeChange('./themes/theme1/theme1.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div>
+    </button>
+    <button class="themeButton2" ng-click="themeChange('themes/theme2/theme2.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div>
+    </button>
+    <button class="themeButton3" ng-click="themeChange('themes/theme3/theme3.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div>
+    </button>
+    <button class="themeButton4" ng-click="themeChange('themes/theme4/theme4.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div>
+    </button>
+    <button class="themeButton5" ng-click="themeChange('themes/theme5/theme5.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div>
+    </button>
+    <button class="themeButton6" ng-click="themeChange('themes/theme6/theme6.css')">
+      <div class="colors">
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+        <span class="scheme"></span>
+      </div>
+    </button>
+  </div>
+</div>
   </div>
   <div class="layouts sidebar">
     <a ng-click="layoutChange('layout1')" href="#layout1" class="button">

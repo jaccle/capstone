@@ -3,7 +3,6 @@ $second: #866450;
 $third: #BFAF80;
 $fourth: #F2EEB3;
 $rest: #260126;
-
 * {
     color: $rest;
 }
@@ -12,14 +11,14 @@ $rest: #260126;
     .one-third.column .ribbon {
         background-color: lighten($third, 12%); //#ba89b6;
         color: #fff;
-    .ribbon-content:before,
-    .ribbon-content:after {
-    border-color: darken($third, 10%) transparent transparent transparent;
+        .ribbon-content:before,
+        .ribbon-content:after {
+            border-color: darken($third, 10%) transparent transparent transparent;
+        }
     }
+    .one-third.column {
+        background-color: lighten($fourth, 9%);
     }
-.one-third.column {
-    background-color: lighten($fourth, 9%);
-}
 }
 
 .name {
@@ -30,7 +29,8 @@ $rest: #260126;
     color: $third;
 }
 
-.one-third.column h5, h4 {
+.one-third.column h5,
+h4 {
     color: $second;
 }
 
@@ -61,16 +61,18 @@ $rest: #260126;
         color: $rest !important;
     }
     &.first {
-        background-color: $first;
+        background-color: lighten($first, 19%);
     }
     &.second {
-        background-color: $second;
+        background-color: lighten($second, 15%);
     }
     &.third {
-        background-color: $third;
+        background-color: lighten($third, 15%);
     }
     &.fourth {
-        background-color: $fourth;
+        background-color: lighten($fourth, 10%);
     }
+    .progress {
+        background-color: $rest;
     }
 }
