@@ -178,8 +178,65 @@
     <!-- Sidebar -->
   <div class="sidebar options">
     <div class="scroll">
-      
     <div ng-if="layout === 'layout1'">
+    <script type="text/ng-template" id="list.html">
+  <ul dnd-list="list">
+    <li ng-repeat="item in list"
+            dnd-draggable="item"
+            dnd-effect-allowed="move"
+            dnd-moved="list.splice($index, 1)"
+            dnd-selected="models.selected = item"
+            ng-class="{selected: models.selected === item}"
+            ng-include="item.type + '.html'">
+        </li>
+  </ul>
+</script>
+<!-- This template is responsible for rendering a container element. It uses the above list template to render each container column -->
+<script type="text/ng-template" id="container.html">
+    <div class="container-element box box-blue row">
+        <div class="six columns" ng-repeat="list in item.columns" ng-include="'list.html'">test</div>
+    </div>
+</script>
+<!-- Template for a normal list item -->
+<script type="text/ng-template" id="item.html">
+  <div class="box item {{item.model}}">{{item.id}}</div>
+</script>
+<!-- Template for a heading -->
+<script type="text/ng-template" id="h1.html">
+  <h1 class="box title {{item.model}}">{{item.id}}</h1>
+</script>
+<!-- Template for a heading -->
+<script type="text/ng-template" id="h2.html">
+  <h2 class="box title {{item.model}}">{{item.id}}</h2>
+</script>
+<!-- Template for a title -->
+<script type="text/ng-template" id="h3.html">
+  <h3 class="box title {{item.model}}">{{item.id}}</h3>
+</script>
+<!-- Template for a title -->
+<script type="text/ng-template" id="h4.html">
+  <h4 class="box title {{item.model}}">{{item.id}}</h4>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="h5.html">
+  <h5 class="box title {{item.model}}">{{item.id}}</h5>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="h6.html">
+  <h6 class="box title {{item.model}}">{{item.id}}</h6>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="title.html">
+  <h5 class="box title {{item.model}}">{{item.id}}</h5>
+</script>
+<!-- Template for title -->
+<script type="text/ng-template" id="title.html">
+  <h6 class="box title {{item.model}}">{{item.id}}</h6>
+</script>
+<!-- Template for a bullet -->
+<script type="text/ng-template" id="bullet.html">
+  <div class="bullet {{item.model}}">• {{item.id}}</div>
+</script>
       <div ng-repeat="(zone, list) in models.dropzones" ng-if="$last" class="col-md-6">
         <div class="dropzone {{zone}}">
           <!-- The dropzone also uses the list template -->
@@ -274,7 +331,7 @@
     <a ng-click="layoutChange('layout2')" href="#layout2" class="button"><img src="./layout2.png" alt=""></a>
     <a ng-click="layoutChange('layout3')" href="#layout3" class="button"><img src="./layout3.png" alt=""></a>
     <a ng-click="layoutChange('layout4')" href="#layout4" class="button"><img src="./layout4.png" alt=""></a>
-    <button ng-click="print(layout, theme)">Print/Save</button>
+    <button ng-click="print(layout, theme)" title="I work best in Chrome!">Print/Save</button>
   </div>
 </body>
 

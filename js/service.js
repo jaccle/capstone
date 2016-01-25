@@ -3,7 +3,9 @@ angular.module("capstone").factory('DummyFormData', function () {
         selected: null,
         templates: [
             {'type': "item", "name": "Item", 'id': "Item"},
-            {'type': "container", "name": "2 Columns", 'id': 'Container', 'columns': [[], []]},
+            {'type': "container", "name": "2 Columns", 'id': 'Container', 'columns': [[
+            {'type': "item", "name": "Item", 'id': "Placeholder"},], [
+            {'type': "item", "name": "Item", 'id': "Placeholder"}]]},
             {'type': "h1", "name": "Title 1", 'id': "Title"},
             {'type': "h2", "name": "Title 2", 'id': "Title"},
             {'type': "h3", "name": "Title 3", 'id': "Title"},
@@ -32,7 +34,7 @@ angular.module("capstone").factory('DummyFormData', function () {
             "Waitlist": [{
                 "type": "item",
                 "id": "I'm set aside",
-                'model': ''
+                'model': 'name'
             }]
         }
     },
