@@ -21,6 +21,9 @@ angular.module("capstone")
     $scope.layout = DummyFormData.layout();
     $scope.theme = DummyFormData.theme();
 
+    $scope.disappear = function(){
+        $scope.class = 'disappear';
+    };
 
     $scope.addExp = function() {
         $scope.experience.push({

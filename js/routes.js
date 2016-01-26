@@ -19,6 +19,6 @@ app.config(function($routeProvider) {
       css: 'layouts/layout4/layout4.css'
     })
     .otherwise({
-       redirectTo: '/layout1' //catch-all re-route
+       redirectTo: '/layout2' //catch-all re-route
     });
 });

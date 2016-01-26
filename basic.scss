@@ -1,6 +1,5 @@
 #demo {
     display: block;
-    // margin-left: 12%;
     border: 2*.01in solid #ddd;
     padding: .6in 1in;
     width: 8.5in;
@@ -12,6 +11,41 @@
         margin: 0;
         padding: 0;
     }
+}
+
+@mixin uppercase () {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+.welcome {
+    margin: 0;
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 900;
+    p {
+        @include uppercase;
+        color: white;
+        text-align: center;
+    }
+}
+
+#welcome {
+    position: relative;
+    margin: 30% 20% 0;
+    width: 60%;
+}
+
+.disappear {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .4s;
 }
 
 .themeButton0 {
@@ -142,31 +176,36 @@
     margin-left: 12%;
     width: 8.5in;
 }
+
 .toggle {
-  margin-top: 5px;
+    margin-top: 5px;
 }
+
 @media screen and (min-width: 2500px) {
-  #form, .toggle {
-    float:right;
-    margin-right: 15%;
-    width: 40%;
-  }
-  #form, #demo {
-    display: inline-block;
-  }
-  .wrapper {
-    margin-top: 2%;
-    width: 90%;
-  }
+    #form,
+    .toggle {
+        float: right;
+        margin-right: 15%;
+        width: 40%;
+    }
+    #form,
+    #demo {
+        display: inline-block;
+    }
+    .wrapper {
+        margin-top: 2%;
+        width: 90%;
+    }
 }
 
 .colors {
     margin: 0;
     width: 100%;
 }
+
 .themes button {
     padding: 0 15px;
-  }
+}
 
 .scheme {
     padding-left: 20%;
@@ -195,8 +234,13 @@ $sideborder: 2*.01in solid #555;
     bottom: 0;
     top: 0;
     min-width: 150px;
-    width: 9%;
+    width: 11%;
     overflow-x: scroll;
+    opacity: .3;
+    transition: opacity .2s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .options {
@@ -206,7 +250,7 @@ $sideborder: 2*.01in solid #555;
         margin: 0;
     }
     button {
-      width: 90%;
+        width: 90%;
     }
 }
 
