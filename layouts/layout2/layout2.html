@@ -1,6 +1,6 @@
 <div id="demo" ng-init="layoutChange('layout2')">
   <div class="row" id="layout2">
-    <h1 class="name">{{name}}</h1>
+    <h1 class="name" style="font-size: {{(150 - name.length*3).toString() + 'px'}}">{{name}}</h1>
   </div>
   <div class="row">
     <div class="one-third column first">

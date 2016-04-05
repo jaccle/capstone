@@ -33,13 +33,18 @@
         @include uppercase;
         color: white;
         text-align: center;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
 #welcome {
     position: relative;
-    margin: 30% 20% 0;
-    width: 60%;
+    margin: 10vmin auto 0;
+    display: block;
+    width: 80vmin;
+    max-height: 50vmin
 }
 
 .disappear {
